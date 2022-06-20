@@ -163,6 +163,33 @@ function register($name, $email, $contact, $password)
             session_start();
             $_SESSION['id'] = $row['id'];
             echo 'registered';
+            $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
+            $subject = 'NTC REGISTRATION';
+            $body = '<html> 
+            <head> 
+                <title>TUCEE Institute of Counselling and Technology</title> 
+            </head> 
+            <body> 
+                <h4>Registration Successful</h4> 
+                <b> <span style="color: green;">Congratulations</span>, you are duly registered for the Counselling training. Proceed to make <span style="color: green;">Payment</span> to Confirm your Particiation. Call <span style="color: green;">+233(0)54 1369 429</span> for any assistance. Thanks</b>
+            </body> 
+            </html>';
+            // yolk mailer
+            // $mym = [$email];
+            $from = ['Tucee', 'TUCEEHUB@tuceehub.org'];
+            $headers = 'MIME-Version: 1.0'."\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+            $headers .= 'From: '.$from[1];
+            mail($email, 'TUCEE '.$subject, $body, $headers);
+
+            $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
+
+            // $sel = mysqli_query($conn, "SELECT * FROM users WHERE id = '$uid'");
+            // $row = mysqli_fetch_array($sel);
+
+            $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
+            mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin, $headers);
+            
         } else {
             echo 'Registeration failed';
         }
