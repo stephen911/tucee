@@ -133,16 +133,19 @@ $user = users();
                                             No Payment has been made yet
                                             
                                         </div>
-                                        <div class="media-right">
-                                            '.$yolk->handler().'
-                                            '.$yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 70, $ref = '').'
-                                            '.$yolk->pay('Pay Now').'
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>';
                             }
                             ?>
+                            <!-- activate pay now -->
+
+<!-- <div class="media-right">
+                                            '.$yolk->handler().'
+                                            '.$yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 70, $ref = '').'
+                                            '.$yolk->pay('Pay Now').'
+                                        </div> -->
 
 
 
