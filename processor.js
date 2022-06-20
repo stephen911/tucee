@@ -209,8 +209,8 @@ $(function(){
 
           swal({
               title: "Congratulations",
-              text: "Update Successful",
-              timer: 3000,
+              text: "You are duly registered for the Counselling training. Proceed to make payment  to confirm your participation  Call 0541 369 429 / 0208 496 496 for any assistance. Thanks",
+              timer: 5000,
               type: 'success',
               padding: "2em",
               onOpen: function () {
