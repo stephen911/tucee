@@ -7,7 +7,8 @@ require 'functions.php';
         case 'update':
             extract($_POST);
             // extract($_POST);
-            updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $lincesed, $nameofschool, $region, $district, $foodpref, $heard, $tdate, $confirm);
+            
+            updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $lincesed, $nameofschool, $region, $district, $foodpref, $heard, $tdate);
 
             break;
         
