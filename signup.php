@@ -13,7 +13,7 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
 
-         <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap" rel="stylesheet">
@@ -113,6 +113,17 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="form-label" for="phonenumber">Phone Number</label>
+                            <div class="input-group input-group-merge">
+                                <input id="phonenumber" type="text" required="required" class="form-control form-control-prepended" placeholder="Your Phone Number" name="contact">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="far fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="form-label" for="email">Email address:</label>
                             <div class="input-group input-group-merge">
                                 <input id="email" type="email" required="" class="form-control form-control-prepended" placeholder="Your email address" name="email">
@@ -123,6 +134,8 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
                         <div class="form-group">
                             <label class="form-label" for="password">Password:</label>
                             <div class="input-group input-group-merge">

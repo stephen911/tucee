@@ -65,13 +65,13 @@ function users()
     return $row;
 }
 
-function confirmuser($id, $confirm)
+function confirmuser($id, $confirmation)
 {
     include 'starter.php';
     // $id = $_SESSION['id'];
-    $conf = mysqli_query($conn, "UPDATE users SET confirm ='$confirm' WHERE id='$id'  ");
+    $conf = mysqli_query($conn, "UPDATE users SET confirm ='$confirmation' WHERE id='$id'  ");
     if ($conf) {
-        echo 'Updated Successfully';
+        echo 'confirmed';
     } else {
         echo 'Failed to update record . Try again';
     }
@@ -146,7 +146,7 @@ function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $l
     }
 }
 
-function register($name, $email, $password)
+function register($name, $email, $contact, $password)
 {
     $password = md5($password);
     include 'starter.php';
@@ -155,7 +155,7 @@ function register($name, $email, $password)
         echo 'Sorry User account exist';
     } else {
         $dd = date('jS F, Y');
-        $ins = mysqli_query($conn, "INSERT INTO users (name,email,password,dateadded) VALUES('$name','$email','$password','$dd')");
+        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,password,dateadded) VALUES('$name','$email', '$contact','$password','$dd')");
 
         if ($ins) {
             $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password='$password'");

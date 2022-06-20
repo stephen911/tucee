@@ -82,7 +82,7 @@ function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $l
 function confirmuser($id, $confirm)
 {
     include 'starter.php';
-    $id = $_GET['id'];
+    // $id = $_GET['id'];
     $conf = mysqli_query($conn, "UPDATE users SET confirm ='$confirm' WHERE id='$id'  ");
     if ($conf) {
         echo 'Participation Confirmed ';

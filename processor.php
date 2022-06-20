@@ -11,10 +11,10 @@ require 'functions.php';
 
             break;
         
-        case 'confirm':
+        case 'cfuser':
             extract($_POST);
             // extract($_POST);
-            confirmuser($id, $confirm);
+            confirmuser($id, $confirmation);
             
 
             break;
@@ -33,10 +33,10 @@ require 'functions.php';
             }
                 if ($password != $repass) {
                     echo 'Password do not match';
-                } elseif ($fname == '' || $lname == '' || $email == '' || $password == '') {
+                } elseif ($fname == '' || $lname == '' || $contact == '' || $email == '' || $password == '') {
                     echo ' All field must be filled';
                 } else {
-                    register($name, $email, $password);
+                    register($name, $email, $contact, $password);
                 }
 
             break;

@@ -178,7 +178,7 @@ $(function(){
 
             swal({
                 title: "Congratulations!",
-                html: "Registration Successful. <br><b>Make Payment to Confirm Participation.</b><br> An email has been sent to your mail.",
+                html: "You are duly registered for the Counselling training. <br><b>Proceed to make Payment to Confirm Participation. Call 0541 369 429 / 0208 496 496</b><br> An email has been sent to your mail.",
                 timer: 3000,
                 type: 'success',
                 padding: "2em",
@@ -189,7 +189,22 @@ $(function(){
                 window.location.reload();
               });
 
-        }
+        }else if(response == 'confirmed'){
+
+          swal({
+              title: "Congratulations!",
+              html: "Your Participation has been confirmed. <br><b>Proceed to make Payment.</b>",
+              timer: 3000,
+              type: 'success',
+              padding: "2em",
+              onOpen: function () {
+                swal.showLoading();
+              },
+            }).then(function (result) {
+              // window.location.reload();
+            });
+
+      }
         else if(response.trim() == 'updatesuccess'){
 
           swal({
@@ -379,6 +394,30 @@ $('.changepass').submit(function(e){
 
 
 
+//confirm
+
+$('.cfuser').submit(function(e){
+
+  e.preventDefault();
+  // before();
+  // var id = $(this).attr('id');
+  var staff = {
+      url: 'processor.php?action=cfuser',
+      type: 'post',
+      data: new FormData(this),
+      cache: false,
+      contentType: false,
+      processData: false,
+      beforeSend: before,
+      success: resp
+
+  };
+  $.ajax(staff);
+});
+
+
 
     
 })
+
+
