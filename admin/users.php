@@ -199,6 +199,7 @@ $user = users();
                                             <th>Payment Status</th>
                                             <th>Confirmation</th>
                                             <th>Food</th>
+                                            <th>Heard</th>
                                             <th>Registration Date</th>
                                             <th>Edit</th>
 
@@ -229,6 +230,7 @@ $user = users();
                                             <th>Payment Status</th>
                                             <th>Confirmation</th>
                                             <th>Food</th>
+                                            <th>Heard</th>
                                             <th>Registration Date</th>
                                             <th>Edit</th>
 

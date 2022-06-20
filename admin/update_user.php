@@ -3,7 +3,7 @@ include 'functions.php';
 include 'yolkpay.php';
 $yolk = new YolkPay();
 checker();
-$user = users();
+$user = upusers();
 //  var_dump($_SESSION['id']);
 
 // if (isset($_POST['btnupdate'])) {
@@ -886,8 +886,8 @@ $user = users();
                                                         <select id="custom-select2" class="form-control custom-select" name="confirm">
                                                             <option selected value="<?php echo ($user['confirm'] == '') ? '' : $user['confirm']; ?>"><?php echo ($user['confirm'] == 'Please select Yes to confirm your Particitation') ? '' : $user['confirm']; ?>
                                                             </option>
-                                                            <option value="Yes">Yes</option>
-                                                            <option value="No">No</option>
+                                                            <option value="confirmed">Yes</option>
+                                                            <option value="">No</option>
                                                             
                                                             
 

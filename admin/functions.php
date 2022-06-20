@@ -58,6 +58,20 @@ function users()
 {
     include 'starter.php';
     // session_start();
+    $id = $_SESSION['id'];
+    
+    $d = mysqli_query($conn, "SELECT * FROM users WHERE id ='$id'");
+    $row = mysqli_fetch_array($d);
+
+    return $row;
+}
+
+
+function upusers()
+{
+    include 'starter.php';
+    // session_start();
+    // $id = $_SESSION['id'];
     $id = $_GET['id'];
     
     $d = mysqli_query($conn, "SELECT * FROM users WHERE id ='$id'");
@@ -66,12 +80,12 @@ function users()
     return $row;
 }
 
-function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $lincesed, $nameofschool, $region, $district, $foodpref, $heard, $tdate)
+function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $lincesed, $nameofschool, $region, $district, $foodpref, $heard, $tdate, $confirm)
 {
     include 'starter.php';
     // $id = $_GET['id'];
     extract($_POST);
-    $up = mysqli_query($conn, "UPDATE users SET title='$title', name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed ='$lincesed', nameofschool='$nameofschool', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate' WHERE id='$id'  ");
+    $up = mysqli_query($conn, "UPDATE users SET title='$title', name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed ='$lincesed', nameofschool='$nameofschool', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate', confirm='$confirm' WHERE id='$id'  ");
     if ($up) {
         echo 'Updated Successfully ';
     } else {
@@ -203,6 +217,8 @@ function registered()
         <td>'.$row['confirm'].'</td>
 
         <td>'.$row['foodpref'].'</td>
+        <td>'.$row['heard'].'</td>
+
         <td>'.$row['dateadded'].'</td>
         <td><a class="btn btn-success" href="update_user.php?id='.$row['id'].'"><i class="fa fa-edit"></i></a></td>      
         <td><a class="btn btn-danger" href="delete_user.php?id='.$row['id'].'"><i class="fa fa-trash"></i></a></td>      
