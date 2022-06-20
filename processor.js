@@ -217,7 +217,7 @@ $(function(){
                 swal.showLoading();
               },
             }).then(function (result) {
-              window.location.reload();
+              window.location.replace("payment.php");
             });
 
       }
