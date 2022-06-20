@@ -150,6 +150,10 @@ function register($name, $email, $contact, $password)
 {
     $password = md5($password);
     include 'starter.php';
+    include 'yolksms.php';
+    include 'sms.php';
+    $sms = new sms();
+    $send = new Yolksms();
     $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     if (mysqli_num_rows($sel) >= 1) {
         echo 'Sorry User account exist';
@@ -162,8 +166,8 @@ function register($name, $email, $contact, $password)
             $row = mysqli_fetch_array($sel);
             session_start();
             $_SESSION['id'] = $row['id'];
+            
             echo 'registered';
-            $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
             $subject = 'NTC REGISTRATION';
             $body = '<html> 
             <head> 
@@ -182,14 +186,13 @@ function register($name, $email, $contact, $password)
             $headers .= 'From: '.$from[1];
             mail($email, 'TUCEE '.$subject, $body, $headers);
 
-            $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training. Please continue with your registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
+            $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training.Please continue with your Registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
 
             // $sel = mysqli_query($conn, "SELECT * FROM users WHERE id = '$uid'");
             // $row = mysqli_fetch_array($sel);
 
             $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
             mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin, $headers);
-            
         } else {
             echo 'Registeration failed';
         }
