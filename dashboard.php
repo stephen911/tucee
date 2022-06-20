@@ -96,7 +96,7 @@ $user = users();
                                     <?php
                                     if ($user['title'] == '' || $user['gender'] == '' || $user['contact'] == '' || $user['lincesed'] == '' || $user['nameofschool'] == '' || $user['district'] == '' || $user['region'] == '' || $user['foodpref'] == '' || $user['paystatus'] == '' || $user['heard'] == '' || $user['tdate'] == '') {
                                         echo '<a class="btn btn-sm btn-danger"
-                                                            href="ntcreg.php">Continue Registration</a>';
+                                                            href="ntcreg.php">Edit Registration</a>';
                                     } else {
                                         echo '<!--<a class="btn btn-sm btn-success"
                                                             href="certification.php"> View Certificate</a>-->';

@@ -310,6 +310,14 @@ function countpaid()
     echo $count;
 }
 
+function total()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM transactions');
+    $count = mysqli_num_rows($c);
+    echo 'Gh¢ '.$count* 70;
+}
+
 function unpaid()
 {
     include 'starter.php';

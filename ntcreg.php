@@ -108,7 +108,9 @@ $user = users();
                                     </div>
                                 </div>
                             </div>
-                            <div class="card border-left-3 border-left-danger card-2by1">
+                            <?php
+                            if ($user['confirm'] == '') {
+                                echo '<div class="card border-left-3 border-left-danger card-2by1">
                                 <div class="card-body">
                                     <div class="media align-items-center">
                                         <div class="media-body">
@@ -118,8 +120,8 @@ $user = users();
                                         </form>
 
                                         <form action="" method="POST" class="cfuser">
-                                            <input id="" type='hidden' name="confirmation" value="confirmed">
-                                            <input id="cfuser" type="hidden" placeholder="" value="<?php echo  $user['id']; ?>" class="form-control" name="id">
+                                            <input id="" type="hidden" name="confirmation" value="confirmed">
+                                            <input id="cfuser" type="hidden" placeholder="" value="'.$user['id'].'" class="form-control" name="id">
 
                                             <div class="page-nav__content" >
                                                 <button type="submit" class="btn btn-success">Confirm Participation</button>
@@ -128,7 +130,26 @@ $user = users();
 
                                     </div>
                                 </div>
-                            </div>
+                            </div>';
+                            } else {
+                                echo '<div class="card border-left-3 border-left-danger card-2by1">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            You have  <span style="color: green;">Confirmed</span> your Participation.
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>
+                            </div>';
+                            }
+                            ?>
+
+                            
+
+                            
+                            
                             <?php
                             if ($user['paystatus'] == 'paid') {
                                 echo '<div class="card border-left-3 border-left-primary card-2by1">
