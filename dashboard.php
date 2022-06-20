@@ -1,132 +1,137 @@
 <?php
- include 'functions.php';
- checker();
- $user = users();
+include 'functions.php';
+include 'yolkpay.php';
+$yolk = new YolkPay();
+
+checker();
+$user = users();
 //  var_dump($_SESSION['id']);
 ?>
 <!DOCTYPE html>
-<html lang="en"
-      dir="ltr">
+<html lang="en" dir="ltr">
 
-    
+
 <!-- Mirrored from learnplus.demo.frontendmatter.com/student-account-edit-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 May 2022 13:24:33 GMT -->
+
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible"
-              content="IE=edge">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard</title>
 
-         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
 
-         <meta name="robots"
-              content="noindex">
+    <meta name="robots" content="noindex">
 
-        <!-- Custom Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap"
-              rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap" rel="stylesheet">
 
-        <!-- Perfect Scrollbar -->
-        <link type="text/css"
-              href="assets/vendor/perfect-scrollbar.css"
-              rel="stylesheet">
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
 
-        <!-- Material Design Icons -->
-        <link type="text/css"
-              href="assets/css/material-icons.css"
-              rel="stylesheet">
+    <!-- Material Design Icons -->
+    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
 
-        <!-- Font Awesome Icons -->
-        <link type="text/css"
-              href="assets/css/fontawesome.css"
-              rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
 
-        <!-- Preloader -->
-        <link type="text/css"
-              href="assets/vendor/spinkit.css"
-              rel="stylesheet">
+    <!-- Preloader -->
+    <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">
 
-        <!-- App CSS -->
-        <link type="text/css"
-              href="assets/css/app.css"
-              rel="stylesheet">
+    <!-- App CSS -->
+    <link type="text/css" href="assets/css/app.css" rel="stylesheet">
 
-    </head>
+</head>
 
-    <body class=" layout-fluid">
+<body class=" layout-fluid">
 
-        <div class="preloader">
-            <div class="sk-chase">
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-            </div>
+    <div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
 
-            <!-- <div class="sk-bounce">
+        <!-- <div class="sk-bounce">
     <div class="sk-bounce-dot"></div>
     <div class="sk-bounce-dot"></div>
   </div> -->
 
-            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
-        </div>
+        <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+    </div>
 
-        <!-- Header Layout -->
-        <?php include 'navbar.php';
-         ?>
+    <!-- Header Layout -->
+    <?php include 'navbar.php';
+    ?>
 
-            <!-- // END Header -->
+    <!-- // END Header -->
 
-            <!-- Header Layout Content -->
-            <div class="mdk-header-layout__content">
+    <!-- Header Layout Content -->
+    <div class="mdk-header-layout__content">
 
-                <div data-push
-                     data-responsive-width="992px"
-                     class="mdk-drawer-layout js-mdk-drawer-layout">
-                    <div class="mdk-drawer-layout__content page ">
+        <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+            <div class="mdk-drawer-layout__content page ">
 
-                        <div class="container-fluid page__container">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="student-dashboard.html">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
-                            </ol>
-                            <h1 class="h2">Dashboard</h1>
+                <div class="container-fluid page__container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="student-dashboard.html">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                    <h1 class="h2">Dashboard</h1>
 
-                            <div class="card border-left-3 border-left-primary card-2by1">
-                                <div class="card-body">
-                                    <div class="media flex-wrap align-items-center">
-                                        <div class="media-left">
-                                            <i class="material-icons text-muted-light">account_box</i>
-                                        </div>
-                                        <div class="media-body"
-                                             style="min-width: 180px">
-                                            Your are welcome! <strong><?php echo $user['title'].' '.$user['name']; ?></strong>
-                                        </div>
-                                        <div class="media-right mt-2 mt-xs-plus-0">
-                                        <?php
-                                                        if ($user['title'] == '' || $user['gender'] == '' || $user['contact'] == '' || $user['lincesed'] == '' || $user['nameofschool'] == '' || $user['district'] == '' || $user['region'] == '' || $user['foodpref'] == '' || $user['paystatus'] == '' || $user['heard'] == '' || $user['tdate'] == '') {
-                                                            echo '<a class="btn btn-sm btn-danger"
+                    <div class="card border-left-3 border-left-primary card-2by1">
+                        <div class="card-body">
+                            <div class="media flex-wrap align-items-center">
+                                <div class="media-left">
+                                    <i class="material-icons text-muted-light">account_box</i>
+                                </div>
+                                <div class="media-body" style="min-width: 180px">
+                                    Your are welcome! <strong><?php echo $user['title'] . ' ' . $user['name']; ?></strong>
+                                </div>
+                                <div class="media-right mt-2 mt-xs-plus-0">
+                                    <?php
+                                    if ($user['title'] == '' || $user['gender'] == '' || $user['contact'] == '' || $user['lincesed'] == '' || $user['nameofschool'] == '' || $user['district'] == '' || $user['region'] == '' || $user['foodpref'] == '' || $user['paystatus'] == '' || $user['heard'] == '' || $user['tdate'] == '') {
+                                        echo '<a class="btn btn-sm btn-danger"
                                                             href="ntcreg.php">Continue Registration</a>';
-                                                        } else {
-                                                            echo '<!--<a class="btn btn-sm btn-success"
+                                    } else {
+                                        echo '<!--<a class="btn btn-sm btn-success"
                                                             href="certification.php"> View Certificate</a>-->';
-                                                        }
-                                                    ?>
-                                        </div>
-                                    </div>
+                                    }
+                                    ?>
+
+                                </div>
+                                <div class="media-right mt-2 mt-xs-plus-0">
+                                    <?php
+                                    if ($user['paystatus'] == '') {
+                                        echo '<div class="">
+                                                            ' . $yolk->handler() . '
+                                                            ' . $yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 70, $ref = '') . '
+                                                            ' . $yolk->pay('Pay Now') . '
+                                                        </div>';
+                                    } else {
+                                        echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                                    }
+                                    ?>
+
+
+
+
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-7">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
 
-                                    
-                                        
 
-                                    <!-- <div class="card">
+
+
+                            <!-- <div class="card">
                                         <div class="card-header">
                                             <div class="media align-items-center">
                                                 <div class="media-body">
@@ -266,156 +271,156 @@
                                         </ul>
                                     </div> -->
 
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="media align-items-center">
-                                                <div class="media-body">
-                                                    <h4 class="card-title">Personal Info</h4>
-                                                    <p class="card-subtitle">Your Personal Information</p>
-                                                </div>
-                                                <!-- <div class="media-right">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <h4 class="card-title">Personal Info</h4>
+                                            <p class="card-subtitle">Your Personal Information</p>
+                                        </div>
+                                        <!-- <div class="media-right">
                                                     <?php
-                                                        if ($user['title'] == '' || $user['gender'] == '' || $user['contact'] == '' || $user['tdate'] == '' || $user['lincesed'] == '' || $user['nameofschool'] == '' || $user['district'] == '' || $user['region'] == '' || $user['foodpref'] == '' || $user['paystatus'] == '' || $user['heard'] == '') {
-                                                            echo '<a class="btn btn-sm btn-danger"
+                                                    if ($user['title'] == '' || $user['gender'] == '' || $user['contact'] == '' || $user['tdate'] == '' || $user['lincesed'] == '' || $user['nameofschool'] == '' || $user['district'] == '' || $user['region'] == '' || $user['foodpref'] == '' || $user['paystatus'] == '' || $user['heard'] == '') {
+                                                        echo '<a class="btn btn-sm btn-danger"
                                                             href="ntcreg.php">Continue Registration</a>';
-                                                        } else {
-                                                            echo '';
-                                                        }
+                                                    } else {
+                                                        echo '';
+                                                    }
                                                     ?>
                                                 </div> -->
-                                            </div>
-                                        </div>
-
-                                        <ul class="list-group list-group-fit mb-0">
-
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>Email Address</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['email']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Good</span>
-                                                        <h4 class="mb-0">5.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>Training Date</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['tdate']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Failed</span>
-                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>Phone Number</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['contact']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Great</span>
-                                                        <h4 class="mb-0 text-success">9.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>Telegram Phone Number</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['telegram']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Failed</span>
-                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>Name of School</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['nameofschool']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Failed</span>
-                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>National Teachers Council License Number</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['lincesed']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Failed</span>
-                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>Region</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['region']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Failed</span>
-                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <strong>District</strong><br>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
-                                                            <a href="#"><?php echo $user['district']; ?></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-right text-center d-flex align-items-center">
-                                                        <!-- <span class="text-black-50 mr-3">Failed</span>
-                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            
-
-                                        </ul>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-5">
+
+                                <ul class="list-group list-group-fit mb-0">
+
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>Email Address</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['email']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Good</span>
+                                                        <h4 class="mb-0">5.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>Training Date</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['tdate']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Failed</span>
+                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>Phone Number</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['contact']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Great</span>
+                                                        <h4 class="mb-0 text-success">9.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>Telegram Phone Number</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['telegram']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Failed</span>
+                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>Name of School</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['nameofschool']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Failed</span>
+                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>National Teachers Council License Number</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['lincesed']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Failed</span>
+                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>Region</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['region']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Failed</span>
+                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <strong>District</strong><br>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
+                                                    <a href="#"><?php echo $user['district']; ?></a>
+                                                </div>
+                                            </div>
+                                            <div class="media-right text-center d-flex align-items-center">
+                                                <!-- <span class="text-black-50 mr-3">Failed</span>
+                                                        <h4 class="mb-0 text-danger">2.8</h4> -->
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-5">
 
                                     
 
@@ -539,45 +544,46 @@
                                         </ul>
                                     </div>
                                 </div> -->
-                            </div>
-
-                        </div>
-
                     </div>
 
-                    <?php include 'sidebar.php'; ?>
-
-                <!-- App Settings FAB -->
-                
+                </div>
 
             </div>
+
+            <?php include 'sidebar.php'; ?>
+
+            <!-- App Settings FAB -->
+
+
         </div>
+    </div>
 
-        <!-- jQuery -->
-        <script src="assets/vendor/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery.min.js"></script>
 
-        <!-- Bootstrap -->
-        <script src="assets/vendor/popper.min.js"></script>
-        <script src="assets/vendor/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
 
-        <!-- Perfect Scrollbar -->
-        <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
 
-        <!-- MDK -->
-        <script src="assets/vendor/dom-factory.js"></script>
-        <script src="assets/vendor/material-design-kit.js"></script>
+    <!-- MDK -->
+    <script src="assets/vendor/dom-factory.js"></script>
+    <script src="assets/vendor/material-design-kit.js"></script>
 
-        <!-- App JS -->
-        <script src="assets/js/app.js"></script>
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
 
-        <!-- Highlight.js -->
-        <script src="assets/js/hljs.js"></script>
+    <!-- Highlight.js -->
+    <script src="assets/js/hljs.js"></script>
 
-        <!-- App Settings (safe to remove) -->
-        <script src="assets/js/app-settings.js"></script>
+    <!-- App Settings (safe to remove) -->
+    <script src="assets/js/app-settings.js"></script>
 
-    </body>
+</body>
 
 
 <!-- Mirrored from learnplus.demo.frontendmatter.com/student-account-edit-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 May 2022 13:24:33 GMT -->
+
 </html>

@@ -21,6 +21,11 @@ class Yolkpay
         return '<button class="btn btn-success" type="submit" onclick="payWithPaystack()"> '.$text.' </button>';
     }
 
+    // public static function dashpay($text = 'Pay')
+    // {
+    //     return '<button class="btn btn-sm btn-danger" type="submit" onclick="payWithPaystack()"> '.$text.' </button>';
+    // }
+
     public static function handler()
     {
         return ' <script src="https://js.paystack.co/v1/inline.js"></script>';

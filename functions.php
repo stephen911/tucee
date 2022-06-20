@@ -159,6 +159,7 @@ function register($name, $email, $contact, $password)
         echo 'Sorry User account exist';
     } else {
         $dd = date('jS F, Y');
+        
         $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,password,dateadded) VALUES('$name','$email', '$contact','$password','$dd')");
 
         if ($ins) {
