@@ -182,7 +182,7 @@ function register($name, $email, $contact, $password)
             $headers .= 'From: '.$from[1];
             mail($email, 'TUCEE '.$subject, $body, $headers);
 
-            $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
+            $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training. Please continue with your registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
 
             // $sel = mysqli_query($conn, "SELECT * FROM users WHERE id = '$uid'");
             // $row = mysqli_fetch_array($sel);
