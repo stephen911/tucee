@@ -56,6 +56,7 @@ if (isset($_POST['btnlogin'])) {
                 <div class="card navbar-shadow">
                     <div class="card-header text-center">
                         <h4 class="card-title">TUCEE Institute of Counselling and Technology</h4>
+                        <small>Call +233(0)541-369-429 for any assistance</small>
                         <!-- <p class="card-subtitle">Access your account</p> -->
                     </div>
 
