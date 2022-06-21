@@ -935,9 +935,9 @@ $user = users();
                                                         <select id="custom-select2" class="form-control custom-select" name="foodpref">
                                                             <option selected value="<?php echo ($user['foodpref'] == '') ? '' : $user['foodpref']; ?>"> <?php echo ($user['foodpref'] == '') ? 'Choose food Preference ' : $user['foodpref']; ?>
                                                             </option>
-                                                            <option value="Waakye with chicken">Waakye with chicken</option>
+                                                            <!-- <option value="Waakye with chicken">Waakye with chicken</option> -->
                                                             <option value="Jollof with chicken">Jollof with chicken</option>
-                                                            <option value="plain rice with chicken">plain rice with chicken</option>
+                                                            <!-- <option value="plain rice with chicken">plain rice with chicken</option> -->
                                                             <option value="Ga-kenkey with Sardine">Ga-kenkey with Sardine</option>
 
 
