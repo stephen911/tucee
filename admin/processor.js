@@ -310,6 +310,25 @@ $('.login').submit(function(e){
   $.ajax(staff);
 });
 
+$('.show').submit(function(e){
+
+  e.preventDefault();
+  // before();
+  // var id = $(this).attr('id');
+  var staff = {
+      url: 'processor.php?action=show',
+      type: 'post',
+      data: new FormData(this),
+      cache: false,
+      contentType: false,
+      processData: false,
+      beforeSend: before,
+      success: resp
+
+  };
+  $.ajax(staff);
+});
+
 
 
 // register

@@ -17,6 +17,13 @@ require 'functions.php';
             confirmuser($id, $confirm);
 
             break;
+        
+        case 'show':
+            extract($_POST);
+            // extract($_POST);
+            show($cert);
+
+            break;
 
         case 'login':
             extract($_POST);

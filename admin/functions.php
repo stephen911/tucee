@@ -105,6 +105,19 @@ function confirmuser($id, $confirm)
     }
 }
 
+
+function show($cert)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $confi = mysqli_query($conn, "UPDATE users SET cert ='$cert'");
+    if ($confi) {
+        echo 'Updated Successfully';
+    } else {
+        echo 'Failed to update record . Try again';
+    }
+}
+
 function register($name, $email, $password)
 {
     $password = md5($password);

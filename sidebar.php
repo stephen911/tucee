@@ -1,3 +1,10 @@
+<?php
+// include 'functions.php';
+// checker();
+$user = users();
+//  var_dump($_SESSION['id']);
+?>
+
 <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
     <div class="mdk-drawer__content ">
         <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
@@ -63,6 +70,22 @@
                                 <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Quiz
                             </a>
                         </li>
+
+                        <?php
+                                    if ($user['cert'] == 'Show') {
+                                        echo '<li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button" href="certification.php">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Certification
+                                        </a>
+                                    </li> ';
+                                    } else {
+                                        echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                                    }
+                                    ?>
+
+
+                        
                         <!-- activate certification -->
 
                          <!-- <li class="sidebar-menu-item active">

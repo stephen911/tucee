@@ -1,3 +1,5 @@
+
+
 <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
     <div class="mdk-drawer__content ">
         <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
@@ -25,6 +27,11 @@
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="trans.php">
                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">money</i> Transactions
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item ">
+                        <a class="sidebar-menu-button" href="cert.php">
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Cert
                         </a>
                     </li>
                     <!-- <li class="sidebar-menu-item active">
