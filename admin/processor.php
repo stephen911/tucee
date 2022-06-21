@@ -24,6 +24,13 @@ require 'functions.php';
             show($cert);
 
             break;
+        
+        case 'showquiz':
+            extract($_POST);
+            // extract($_POST);
+            showquiz($quiz);
+
+            break;
 
         case 'login':
             extract($_POST);
@@ -51,6 +58,10 @@ require 'functions.php';
                 changepass($id, $password, $newpass);
             }
                 break;
+        case 'pay':
+            extract($_POST);
+            echo $id;
+            break;
 
         default:
 

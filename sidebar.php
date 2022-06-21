@@ -65,11 +65,19 @@ $user = users();
                                 <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">credit_card</i> Payment
                             </a>
                         </li>
-                        <li class="sidebar-menu-item active">
-                            <a class="sidebar-menu-button" href="quiz.php">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Quiz
-                            </a>
-                        </li>
+                        <?php
+                                    if ($user['quiz'] == 'Show') {
+                                        echo '<li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button" href="quiz.php">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Quiz
+                                        </a>
+                                    </li>';
+                                    } else {
+                                        echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                                    }
+                                    ?>
+                        
 
                         <?php
                                     if ($user['cert'] == 'Show') {

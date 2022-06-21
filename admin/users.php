@@ -110,6 +110,9 @@ $user = users();
     <!-- Font Awesome Icons -->
     <link type="text/css" href="../assets/css/fontawesome.css" rel="stylesheet">
 
+    <!-- sweetalert -->
+    <link type="text/css" href="../assets/css/sweetalert2.min.css" rel="stylesheet">
+
     <!-- Preloader -->
     <link type="text/css" href="../assets/vendor/spinkit.css" rel="stylesheet">
 
@@ -201,6 +204,7 @@ $user = users();
                                             <th>Food</th>
                                             <th>Heard</th>
                                             <th>Registration Date</th>
+                                            <th>Pay</th>
                                             <th>Edit</th>
 
                                             <th>Actions</th>
@@ -232,6 +236,7 @@ $user = users();
                                             <th>Food</th>
                                             <th>Heard</th>
                                             <th>Registration Date</th>
+                                            <th>Pay</th>
                                             <th>Edit</th>
 
                                             <th>Actions</th>
@@ -477,7 +482,7 @@ $user = users();
     <script src="default/files/assets/pages/data-table/js/dataTables.bootstrap4.min.js"></script>
     <script src="default/files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="default/files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <!-- <-- <i18next.min.js --> -->
+    <!-- <-- <i18next.min.js --> 
     <!-- <script type="text/javascript" src="default/files/bower_components/i18next/i18next.min.js"></script> -->
     <!-- <script type="text/javascript" -->
         <!-- src="default/files/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script> -->
@@ -492,6 +497,21 @@ $user = users();
     <!-- <script type="text/javascript" src="default/files/assets/js/script.js"></script> -->
 
 
+    <script src="../assets/js/sweetalert2.all.min.js"></script>
+    <script src="../assets/js/regions.js"></script>
+
+    <script src="../assets/js/view.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="../assets/js/hljs.js"></script>
+
+    <!-- App Settings (safe to remove) -->
+    <script src="../assets/js/app-settings.js"></script>
+
+
+
+
+    <script src="processor.js"></script>
     
 
 

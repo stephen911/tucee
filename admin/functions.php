@@ -118,6 +118,18 @@ function show($cert)
     }
 }
 
+function showquiz($quiz)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $confiu = mysqli_query($conn, "UPDATE users SET quiz ='$quiz'");
+    if ($confiu) {
+        echo 'Updated Successfully';
+    } else {
+        echo 'Failed to update record . Try again';
+    }
+}
+
 function register($name, $email, $password)
 {
     $password = md5($password);
@@ -233,7 +245,9 @@ function registered()
         <td>'.$row['heard'].'</td>
 
         <td>'.$row['dateadded'].'</td>
-        <td><a class="btn btn-success" href="update_user.php?id='.$row['id'].'"><i class="fa fa-edit"></i></a></td>      
+        <td><button class="btn btn-success payme" id="'.$row['id'].'"><i class="fa fa-money-bill"></i></button></td>      
+
+        <td><a class="btn btn-primary" href="update_user.php?id='.$row['id'].'"><i class="fa fa-edit"></i></a></td>      
         <td><a class="btn btn-danger" href="delete_user.php?id='.$row['id'].'"><i class="fa fa-trash"></i></a></td>      
 
 
@@ -339,4 +353,9 @@ function unpaid()
     $c2 = mysqli_query($conn, 'SELECT * FROM users');
     $count2 = mysqli_num_rows($c2);
     echo $count2 - $count;
+}
+
+function pay($id){
+    include 'starter.php';
+    $p = 
 }

@@ -330,6 +330,26 @@ $('.show').submit(function(e){
 });
 
 
+$('.showquiz').submit(function(e){
+
+  e.preventDefault();
+  // before();
+  // var id = $(this).attr('id');
+  var staff = {
+      url: 'processor.php?action=showquiz',
+      type: 'post',
+      data: new FormData(this),
+      cache: false,
+      contentType: false,
+      processData: false,
+      beforeSend: before,
+      success: resp
+
+  };
+  $.ajax(staff);
+});
+
+
 
 // register
 
@@ -378,7 +398,24 @@ $('.changepass').submit(function(e){
   $.ajax(staff);
 });
 
+$('.payme').click(function(e) {
+  e.preventDefault();
+  var staff = {
+    url: 'processor.php?action=pay',
+    type: 'post',
+    data: {'id' : $(this).attr('id')},
+    // cache: false,
+    // contentType: false,
+    // processData: false,
+    beforeSend: before,
+    success: resp
 
+};
+$.ajax(staff);
+  
+
+  
+})
 
 
     
