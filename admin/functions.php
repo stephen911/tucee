@@ -357,5 +357,15 @@ function unpaid()
 
 function pay($id){
     include 'starter.php';
-    $p = 
+    $transid  = uniqid('MOMO');
+    $dateadded = date('jS F, Y');
+    $p = mysqli_query($conn,'UPDATE users SET paystatus = "paid" WHERE id ="'.$id.'"');
+    $q = mysqli_query($conn,"INSERT INTO transactions (uid,transid,amount,dateadded) VALUES('$id','$transid','70','$dateadded')");
+
+    if($p && $q){
+        echo 'payadded';
+    }
+    else{
+        echo 'Failed to add payment';
+    }
 }

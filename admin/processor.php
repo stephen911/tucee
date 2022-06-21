@@ -60,7 +60,7 @@ require 'functions.php';
                 break;
         case 'pay':
             extract($_POST);
-            echo $id;
+            pay($id);
             break;
 
         default:
