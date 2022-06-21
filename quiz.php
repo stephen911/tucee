@@ -100,7 +100,7 @@
                                                     <!-- <strong class="text-danger">$25.00</strong> <a href="#">#8331</a> -->
                                                 </div>
                                                 <div class="media-right">
-                                                    <a href="#"
+                                                    <a href="dashboard.php"
                                                        class="btn btn-success float-right">Go to Dashboard</a>
                                                 </div>
                                             </div>
