@@ -78,8 +78,27 @@ $user = users();
 
                 <div class="container-fluid page__container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="student-dashboard.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                         <li class="breadcrumb-item active">Dashboard</li>
+                        <?php
+                                    if ($user['cert'] == 'Show') {
+                                        echo '<li class="breadcrumb-item"><a href="certification.php">View Certificate</a></li>';
+                                    } else {
+                                        echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                                    }
+                                    ?>
+
+<?php
+                                    if ($user['quiz'] == 'Show') {
+                                        echo '<li class="breadcrumb-item"><a href="quiz.php">Take Quiz</a></li>';
+                                    } else {
+                                        echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                                    }
+                                    ?>
+                        <!-- <li class="breadcrumb-item"><a href="certification.php">View Certificate</a></li>
+                        <li class="breadcrumb-item"><a href="quiz.php">Quiz</a></li> -->
                     </ol>
                     <h1 class="h2">Dashboard</h1>
 
