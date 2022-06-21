@@ -32,6 +32,21 @@ require 'functions.php';
 
             break;
 
+        case 'showdisquiz':
+            extract($_POST);
+            // extract($_POST);
+            showdisquiz($disquiz, $district);
+
+            break;
+
+        case 'showdiscert':
+            extract($_POST);
+            // extract($_POST);
+            showdiscert($discert, $district);
+
+            break;
+        
+
         case 'login':
             extract($_POST);
             login($email, $password);

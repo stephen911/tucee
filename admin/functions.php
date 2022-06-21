@@ -118,11 +118,40 @@ function show($cert)
     }
 }
 
+
 function showquiz($quiz)
 {
     include 'starter.php';
     // $id = $_GET['id'];
     $confiu = mysqli_query($conn, "UPDATE users SET quiz ='$quiz'");
+    if ($confiu) {
+        echo 'Updated Successfully';
+    } else {
+        echo 'Failed to update record . Try again';
+    }
+}
+
+
+function showdiscert($discert, $district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $confiu = mysqli_query($conn, "UPDATE users SET cert ='$discert' WHERE district='$district'");
+    if ($confiu) {
+        echo 'Updated Successfully';
+    } else {
+        echo 'Failed to update record . Try again';
+    }
+}
+
+
+
+
+function showdisquiz($disquiz, $district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $confiu = mysqli_query($conn, "UPDATE users SET quiz ='$disquiz' WHERE district='$district'");
     if ($confiu) {
         echo 'Updated Successfully';
     } else {
