@@ -184,7 +184,7 @@ $(function(){
                   swal.showLoading();
                 },
               }).then(function (result) {
-                window.location.reload();
+                window.location='users.php';
               });
 
         }
@@ -207,6 +207,25 @@ $(function(){
             });
 
       }
+
+
+
+      else if(response == 'payadded'){
+
+        swal({
+            title: "Success",
+            text: "Payment added Successful",
+            timer: 1000,
+            type: 'success',
+            padding: "2em",
+            onOpen: function () {
+              swal.showLoading();
+            },
+          }).then(function (result) {
+            window.location="users.php";
+          });
+
+    }
 
 
         else if(response == 'loginfailed'){
