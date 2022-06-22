@@ -66,37 +66,50 @@ $user = users();
                             </a>
                         </li>
                         <?php
-                                    if ($user['quiz'] == 'Show') {
-                                        echo '<li class="sidebar-menu-item active">
+                        if ($user['quiz'] == 'Show') {
+                            echo '<li class="sidebar-menu-item active">
                                         <a class="sidebar-menu-button" href="quiz.php">
                                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Quiz
                                         </a>
                                     </li>';
-                                    } else {
-                                        echo '<!--<a class="btn btn-sm btn-success"
+                        } else {
+                            echo '<!--<a class="btn btn-sm btn-success"
                                                             href="certification.php"> View Certificate</a>-->';
-                                    }
-                                    ?>
-                        
+                        }
+                        ?>
+
 
                         <?php
-                                    if ($user['cert'] == 'Show') {
-                                        echo '<li class="sidebar-menu-item active">
+                        if ($user['cert'] == 'Show') {
+                            echo '<li class="sidebar-menu-item active">
                                         <a class="sidebar-menu-button" href="certification.php">
                                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Certification
                                         </a>
                                     </li> ';
-                                    } else {
-                                        echo '<!--<a class="btn btn-sm btn-success"
+                        } else {
+                            echo '<!--<a class="btn btn-sm btn-success"
                                                             href="certification.php"> View Certificate</a>-->';
-                                    }
-                                    ?>
+                        }
+                        ?>
+
+                        <?php
+                        if ($user['quiz'] == 'Show') {
+                            echo '<li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button" href="evaluation.php">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Evaluation
+                                        </a>
+                                    </li> ';
+                        } else {
+                            echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                        }
+                        ?>
 
 
-                        
+
                         <!-- activate certification -->
 
-                         <!-- <li class="sidebar-menu-item active">
+                        <!-- <li class="sidebar-menu-item active">
                             <a class="sidebar-menu-button" href="certification.php">
                                 <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Certification
                             </a>
