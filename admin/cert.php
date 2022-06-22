@@ -133,7 +133,9 @@ $user = users();
 
 
                             </form>
-                            <br>
+                            
+                            <!-- activate district cert -->
+                            <!-- <br>
 
                             <form action="" method="POST" class="showdiscert">
                                 <div class="card">
@@ -742,7 +744,7 @@ $user = users();
 
 
 
-                            </form>
+                            </form> -->
                             
                             <!-- <form action="" method="post">
 

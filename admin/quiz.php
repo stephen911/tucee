@@ -129,7 +129,9 @@ $user = users();
 
 
                             </form>
-                            <br>
+
+                            <!-- activate district quiz -->
+                            <!-- <br>
                             <form action="" method="POST" class="showdisquiz">
                                 <div class="card">
                                     <div class="list-group-item">
@@ -737,7 +739,7 @@ $user = users();
 
 
 
-                            </form>
+                            </form> -->
                             <!-- <form action="" method="post">
 
                             <div class="page-nav__content"  style="display: inline;">

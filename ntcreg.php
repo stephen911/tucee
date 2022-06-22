@@ -201,7 +201,7 @@ $user = users();
                                                     <label id="label-status" for="status" class="col-md-3 col-form-label form-label">Title
                                                     </label>
                                                     <div class="col-md-9">
-                                                        <select id="custom-select" class="form-control custom-select" name="title">
+                                                        <select id="custom-select" class="form-control custom-select" name="title" required="required">
                                                             <option selected value="<?php echo ($user['title'] == '') ? '' : $user['title']; ?>"><?php echo ($user['title'] == '') ? 'Select your title' : $user['title']; ?></option>
                                                             <option value="Dr.">Dr.</option>
                                                             <option value="Fr.">Fr.</option>
@@ -300,7 +300,7 @@ $user = users();
                                                 <div class="form-row">
                                                     <label id="label-schname" for="schname" class="col-md-3 col-form-label form-label">Name of School</label>
                                                     <div class="col-md-9">
-                                                        <input id="schname" type="text" placeholder="Name of School" value="<?php echo ($user['nameofschool'] == '') ? '' : $user['nameofschool']; ?>" class="form-control" name="nameofschool">
+                                                        <input id="schname" type="text" required="required" placeholder="Name of School" value="<?php echo ($user['nameofschool'] == '') ? '' : $user['nameofschool']; ?>" class="form-control" name="nameofschool">
                                                     </div>
                                                 </div>
                                             </div>
@@ -341,7 +341,7 @@ $user = users();
                                                 <div class="form-row">
                                                     <label id="label-region" for="region" class="col-md-3 col-form-label form-label">Region</label>
                                                     <div class="col-md-9">
-                                                        <select id="custom-select8" class="form-control custom-select" name="region">
+                                                        <select required="required" id="custom-select8" class="form-control custom-select" name="region">
                                                             <option selected value="<?php echo ($user['region'] == '') ? '' : $user['region']; ?>"><?php echo ($user['region'] == '') ? 'Select you region' : $user['region']; ?>
                                                             </option>
 
@@ -922,7 +922,7 @@ $user = users();
                                                     <label id="label-tdate" for="tdate" class="col-md-3 col-form-label form-label">Date for training</label>
                                                     <div class="col-md-9">
                                                         <?php $date = date('Y-m-d', strtotime($user['tdate'])); ?>
-                                                        <input id="tdate" type="date" placeholder="Date for training" value="<?php echo ($user['tdate'] == '') ? '' : $date; ?>" class="form-control" name="tdate">
+                                                        <input required="required" id="tdate" type="date" placeholder="Date for training" value="<?php echo ($user['tdate'] == '') ? '' : $date; ?>" class="form-control" name="tdate">
                                                     </div>
                                                 </div>
                                             </div>
@@ -933,7 +933,7 @@ $user = users();
                                                     <label id="label-foodpref" for="foodpref" class="col-md-3 col-form-label form-label">Food Preference</label>
                                                     <div class="col-md-9">
                                                         <select id="custom-select2" class="form-control custom-select" name="foodpref">
-                                                            <option selected value="<?php echo ($user['foodpref'] == '') ? '' : $user['foodpref']; ?>"> <?php echo ($user['foodpref'] == '') ? 'Choose food Preference ' : $user['foodpref']; ?>
+                                                            <option required="required" selected value="<?php echo ($user['foodpref'] == '') ? '' : $user['foodpref']; ?>"> <?php echo ($user['foodpref'] == '') ? 'Choose food Preference ' : $user['foodpref']; ?>
                                                             </option>
                                                             <!-- <option value="Waakye with chicken">Waakye with chicken</option> -->
                                                             <option value="Jollof with chicken">Jollof with chicken</option>
@@ -951,7 +951,7 @@ $user = users();
                                                 <div class="form-row">
                                                     <label id="label-heard" for="heard" class="col-md-3 col-form-label form-label">How did you hear/know of this training</label>
                                                     <div class="col-md-9">
-                                                        <select id="custom-select2" class="form-control custom-select" name="heard">
+                                                        <select required="required" id="custom-select2" class="form-control custom-select" name="heard">
                                                             <option selected value="<?php echo ($user['heard'] == '') ? 'How did you hear/know of this training' : $user['heard']; ?>"><?php echo ($user['heard'] == 'select how you heard about this training') ? '' : $user['heard']; ?>
                                                             </option>
                                                             <option value="TUCEE Website">TUCEE Website</option>
@@ -962,7 +962,7 @@ $user = users();
                                                             <option value="Instagram">Instagram</option>
                                                             <option value="Friend">Friend</option>
                                                             <option value="Radio">Radio</option>
-                                                            <option value="Other">other</option>
+                                                            <!-- <option value="Other">other</option> -->
 
 
                                                         </select>

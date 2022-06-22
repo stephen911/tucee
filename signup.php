@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <label class="form-label" for="name">First Name:</label>
                             <div class="input-group input-group-merge">
-                                <input id="name" type="text" required="" class="form-control form-control-prepended" placeholder="Your first name" name="fname">
+                                <input id="name" type="text" required="required" class="form-control form-control-prepended" placeholder="Your first name" name="fname">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
                                         <span class="far fa-user"></span>
@@ -104,7 +104,7 @@
                         <div class="form-group">
                             <label class="form-label" for="name">Last Name:</label>
                             <div class="input-group input-group-merge">
-                                <input id="name" type="text" required="" class="form-control form-control-prepended" placeholder="Your last name" name="lname">
+                                <input id="name" type="text" required="required" class="form-control form-control-prepended" placeholder="Your last name" name="lname">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
                                         <span class="far fa-user"></span>
@@ -126,7 +126,7 @@
                         <div class="form-group">
                             <label class="form-label" for="email">Email address:</label>
                             <div class="input-group input-group-merge">
-                                <input id="email" type="email" required="" class="form-control form-control-prepended" placeholder="Your email address" name="email">
+                                <input id="email" type="email" required="required" class="form-control form-control-prepended" placeholder="Your email address" name="email">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
                                         <span class="far fa-envelope"></span>
@@ -139,7 +139,7 @@
                         <div class="form-group">
                             <label class="form-label" for="password">Password:</label>
                             <div class="input-group input-group-merge">
-                                <input id="password" type="password" required="" class="form-control form-control-prepended" placeholder="Choose a password" name="password">
+                                <input id="password" type="password" required="required" class="form-control form-control-prepended" placeholder="Choose a password" name="password">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
                                         <span class="far fa-key"></span>
@@ -150,7 +150,7 @@
                         <div class="form-group">
                             <label class="form-label" for="password2">Password:</label>
                             <div class="input-group input-group-merge">
-                                <input id="password2" type="password" required="" class="form-control form-control-prepended" placeholder="Confirm password" name="repass">
+                                <input id="password2" type="password" required="required" class="form-control form-control-prepended" placeholder="Confirm password" name="repass">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
                                         <span class="far fa-key"></span>
