@@ -128,7 +128,7 @@ function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $l
     //         $headers = 'MIME-Version: 1.0'."\r\n";
     //         $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
     //         $headers .= 'From: '.$from[1];
-    //         mail($email, 'TUCEE '.$subject, $body, $headers);
+    //         mail($email, 'TUCEE NTC REGISTRATION', $body, $headers);
 
     //         $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
 
@@ -136,8 +136,8 @@ function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $l
     //         // $row = mysqli_fetch_array($sel);
 
     //         $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
-    //         mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin, $headers);
-    //     // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin, $headers);
+    //         mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', $admin, $headers);
+    //     // mail('kpin463@gmail.com', 'TUCEE NTC REGISTRATION', $admin, $headers);
     //     // $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
     //     } else {
     //         echo 'Failed to update record . Try again';
@@ -192,7 +192,7 @@ function register($name, $email, $contact, $password)
             $headers = 'MIME-Version: 1.0'."\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
             $headers .= 'From: '.$from[1];
-            mail($email, 'TUCEE '.$subject, $body, $headers);
+            mail($email, 'TUCEE NTC REGISTRATION', $body, $headers);
 
             $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training.Please continue with your Registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
 
@@ -200,7 +200,7 @@ function register($name, $email, $contact, $password)
             // $row = mysqli_fetch_array($sel);
 
             $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
-            mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin, $headers);
+            mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', $admin, $headers);
         } else {
             echo 'Registeration failed';
         }
