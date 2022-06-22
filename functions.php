@@ -161,6 +161,7 @@ function register($name, $email, $contact, $password)
     include 'sms.php';
     $sms = new sms();
     $send = new Yolksms();
+
     $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     if (mysqli_num_rows($sel) >= 1) {
         echo 'Sorry User account exist';
@@ -177,6 +178,7 @@ function register($name, $email, $contact, $password)
             
             echo 'registered';
             $subject = 'NTC REGISTRATION';
+            $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
             $body = '<html> 
             <head> 
                 <title>TUCEE Institute of Counselling and Technology</title> 
