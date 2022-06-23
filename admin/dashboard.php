@@ -58,13 +58,10 @@ $user = users();
     <!-- feather Awesome -->
     <!-- <link rel="stylesheet" type="text/css" href="default/files/assets/icon/feather/css/feather.css"> -->
     <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css"
-        href="default/files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="default/files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="default/files/assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="default/files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="default/files/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="default/files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="default/files/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
     <!-- Style.css -->
     <!-- <link rel="stylesheet" type="text/css" href="default/files/assets/css/style.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="default/files/assets/css/jquery.mCustomScrollbar.css"> -->
@@ -118,9 +115,10 @@ $user = users();
 
 
     <style>
-        #example th, td{
+        #example th,
+        td {
             border: 1px solid grey;
-            border-collapse:collapse;
+            border-collapse: collapse;
         }
     </style>
 </head>
@@ -171,7 +169,7 @@ $user = users();
                                     <i class="material-icons text-muted-light">account_box</i>
                                 </div>
                                 <div class="media-body" style="min-width: 180px">
-                                    Your are welcome Admin! <strong><?php echo $user['title'].' '.$user['name']; ?></strong>
+                                    Your are welcome Admin! <strong><?php echo $user['title'] . ' ' . $user['name']; ?></strong>
                                 </div>
                                 <!-- <div class="media-right mt-2 mt-xs-plus-0">
                                         <a class="btn btn-sm btn-danger"
@@ -201,7 +199,7 @@ $user = users();
                             <li class="list-group-item">
                                 <div class="media align-items-center">
                                     <div class="media-body">
-                                        <a class="text-body" href="student-quiz-results.html"><strong>Total Users</strong></a><br>
+                                        <a class="text-body" href="#"><strong>Total Users</strong></a><br>
                                         <!-- <div class="d-flex align-items-center">
                                             <small class="text-black-50 text-uppercase mr-2">Course</small>
                                             <a href="student-take-course.html">Angular in Steps</a>
@@ -216,7 +214,7 @@ $user = users();
                             <li class="list-group-item">
                                 <div class="media align-items-center">
                                     <div class="media-body">
-                                        <a class="text-body" href="student-quiz-results.html"><strong>Paid Users</strong></a><br>
+                                        <a class="text-body" href="#"><strong>Paid Users</strong></a><br>
                                         <!-- <div class="d-flex align-items-center">
                                             <small class="text-black-50 text-uppercase mr-2">Course</small>
                                             <a href="student-take-course.html">Angular in Steps</a>
@@ -224,14 +222,14 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php countpaid(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php countpaid();  percentage();?></h4>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="media align-items-center">
                                     <div class="media-body">
-                                        <a class="text-body" href="student-quiz-results.html"><strong>Unpaid Users</strong></a><br>
+                                        <a class="text-body" href="#"><strong>Unpaid Users</strong></a><br>
                                         <!-- <div class="d-flex align-items-center">
                                             <small class="text-black-50 text-uppercase mr-2">Course</small>
                                             <a href="student-take-course.html">Angular in Steps</a>
@@ -239,14 +237,44 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php unpaid(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php unpaid(); unpaidpercentage(); ?></h4>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="media align-items-center">
                                     <div class="media-body">
-                                        <a class="text-body" href="student-quiz-results.html"><strong>Total Amount</strong></a><br>
+                                        <a class="text-body" href="#"><strong>Confirmed Users</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php confirmedusers(); cpercentage(); ?></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Unconfirmed Users</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php confirmedusers(); ucpercentage(); ?></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Total Amount</strong></a><br>
                                         <!-- <div class="d-flex align-items-center">
                                             <small class="text-black-50 text-uppercase mr-2">Course</small>
                                             <a href="student-take-course.html">Angular in Steps</a>
@@ -273,13 +301,13 @@ $user = users();
 
 
 
-                   
-
-                    
 
 
 
-                    
+
+
+
+
 
 
 
@@ -504,9 +532,9 @@ $user = users();
     <!-- <-- <i18next.min.js --> -->
     <!-- <script type="text/javascript" src="default/files/bower_components/i18next/i18next.min.js"></script> -->
     <!-- <script type="text/javascript" -->
-        <!-- src="default/files/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script> -->
+    <!-- src="default/files/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script> -->
     <!-- <script type="text/javascript" -->
-        <!-- src="default/files/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script> -->
+    <!-- src="default/files/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script> -->
     <!-- <script type="text/javascript" src="default/files/bower_components/jquery-i18next/jquery-i18next.min.js"></script> -->
     <!-- Custom js -->
     <!-- <script src="default/files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script> -->
@@ -516,10 +544,10 @@ $user = users();
     <!-- <script type="text/javascript" src="default/files/assets/js/script.js"></script> -->
 
 
-    
 
 
-    
+
+
 
 
 

@@ -31,7 +31,7 @@
                     </li>
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="cert.php">
-                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Cert
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Cert and Eval
                         </a>
                     </li>
                     <li class="sidebar-menu-item ">

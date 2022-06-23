@@ -358,6 +358,37 @@ function countusers()
     echo $count;
 }
 
+
+function confirmedusers()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM users WHERE confirm="confirmed"');
+    $count3 = mysqli_num_rows($c);
+    echo $count3;
+}
+
+function cpercentage()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM users WHERE confirm="confirmed"');
+    $count = mysqli_num_rows($c);
+    $c2 = mysqli_query($conn, 'SELECT * FROM users');
+    $count2 = mysqli_num_rows($c2);
+    echo '('.($count / $count2) * 100 .'%)';
+}
+
+function ucpercentage()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM users WHERE confirm="confirmed"');
+    $count = mysqli_num_rows($c);
+    $c2 = mysqli_query($conn, 'SELECT * FROM users');
+    $count2 = mysqli_num_rows($c2);
+
+    $unc = $count2 -$count;
+    echo '('.($unc / $count2) * 100 .'%)';
+}
+
 function countpaid()
 {
     include 'starter.php';
@@ -382,6 +413,28 @@ function unpaid()
     $c2 = mysqli_query($conn, 'SELECT * FROM users');
     $count2 = mysqli_num_rows($c2);
     echo $count2 - $count;
+}
+
+function unpaidpercentage()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM transactions');
+    $count = mysqli_num_rows($c);
+    $c2 = mysqli_query($conn, 'SELECT * FROM users');
+    $count2 = mysqli_num_rows($c2);
+    $unp = $count2 - $count;
+    echo '('.($unp / $count2) * 100 .'%)';
+}
+
+
+function percentage()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM transactions');
+    $count = mysqli_num_rows($c);
+    $c2 = mysqli_query($conn, 'SELECT * FROM users');
+    $count2 = mysqli_num_rows($c2);
+    echo '('.($count / $count2) * 100 .'%)';
 }
 
 function pay($id){

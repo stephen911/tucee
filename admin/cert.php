@@ -739,7 +739,7 @@ $user = users();
 
 
                                 <div class="page-nav__content">
-                                    <button type="submit" name="btnupdate" class="btn btn-success">Update District Cert</button>
+                                    <button type="submit" name="btnupdate" class="btn btn-success">Update District Cert and eval</button>
                                 </div>
 
 
