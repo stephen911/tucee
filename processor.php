@@ -34,10 +34,10 @@ require 'functions.php';
             }
                 if ($password != $repass) {
                     echo 'Password do not match';
-                } elseif ($fname == '' || $lname == '' || $contact == '' || $email == '' || $password == '') {
+                } elseif ($fname == '' || $lname == '' || $contact == '' || $region == '' || $district == '' || $tdate == '' || $email == '' || $password == '') {
                     echo ' All field must be filled';
                 } else {
-                    register($name, $email, $contact, $password);
+                    register($name, $email, $contact, $region, $district, $tdate, $password);
                 }
 
             break;

@@ -267,7 +267,7 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php confirmedusers(); ucpercentage(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php unconfirmedusers(); ucpercentage(); ?></h4>
                                     </div>
                                 </div>
                             </li>

@@ -153,7 +153,7 @@ function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $l
     // }
 }
 
-function register($name, $email, $contact, $password)
+function register($name, $email, $contact, $region, $district, $tdate, $password)
 {
     $password = md5($password);
     include 'starter.php';
@@ -167,8 +167,11 @@ function register($name, $email, $contact, $password)
         echo 'Sorry User account exist';
     } else {
         $dd = date('jS F, Y');
+        $old = $tdate;
+        $tdate = date('jS F, Y', strtotime($old));
+
         
-        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,password,dateadded) VALUES('$name','$email', '$contact','$password','$dd')");
+        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$region', '$district', '$tdate', '$password', '$dd' ) ");
 
         if ($ins) {
             $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password='$password'");
