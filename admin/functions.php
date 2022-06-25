@@ -160,6 +160,157 @@ function showdisquiz($disquiz, $district)
 }
 
 
+function dispaidstatstotal($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count * 70 .'</h4>';
+    
+}
+
+function dispaidstatspertotal($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+
+    $c = mysqli_query($conn, "SELECT * FROM users");
+    $count2 = mysqli_num_rows($c);
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+
+}
+
+function dispaidstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function dispaidstatsper($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count2 = mysqli_num_rows($c);
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+    // echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+function disunpaidstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus=''");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+
+function disunpaidstatsper($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count2 = mysqli_num_rows($c);
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus=''");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+    // echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+function disconfstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm='confirmed'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+
+}
+
+
+
+function disconfstatsper($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count2 = mysqli_num_rows($c);
+    $ci = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm='confirmed'");
+    $count = mysqli_num_rows($ci);
+    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+}
+
+
+
+function disunconfstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm=''");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function disunconfstatsper($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count2 = mysqli_num_rows($c);
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm=''");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+    // echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
 
 function foodstats($district)
 {
@@ -168,6 +319,25 @@ function foodstats($district)
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Jollof with chicken'");
     $count = mysqli_num_rows($c);
     echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+function countdistrict($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users");
+    $count2 = mysqli_num_rows($c);
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+
     // if ($confiu) {
     //     echo 'Updated Successfully';
     // } else {
@@ -188,6 +358,8 @@ function jpfoodstats($district)
     //     echo 'Failed to update record . Try again';
     // }
 }
+
+
 
 
 function jcfoodstats($district)
@@ -252,7 +424,20 @@ function sfoodstats($district)
     include 'starter.php';
     // $id = $_GET['id'];
 
-    echo $district;
+    echo '<h4 class="card-title">Food Statistics for '.$district.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function ssfoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+
+    echo '<h4 class="card-title">Statistics for '.$district.'</h4>';
     // if ($confiu) {
     //     echo 'Updated Successfully';
     // } else {
@@ -519,6 +704,7 @@ function total()
     $count = mysqli_num_rows($c);
     echo 'Gh¢ '.$count* 70;
 }
+
 
 function unpaid()
 {

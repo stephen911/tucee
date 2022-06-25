@@ -781,7 +781,7 @@ $user = users();
 
 
                         <div class="page-nav__content">
-                            <button type="submit" name="btnupdate" class="btn btn-success">Show Food Stats</button>
+                            <button type="submit" name="btnupdate" class="btn btn-success">Show Stats</button>
                         </div>
 
 
@@ -789,22 +789,18 @@ $user = users();
                     </form>
 
                     <br>
-
-
                     <div class="card">
                         <div class="card-header">
                             <div class="media align-items-center">
-
-
                                 <div class="media-body">
-                                    <h4 class="card-title">Food Statistics for <?php
-                                                                                if (isset($_POST['btnupdate'])) {
-                                                                                    sfoodstats($_POST['district']);
-                                                                                } else {
-                                                                                    echo '';
-                                                                                }
+                                    <?php
+                                    if (isset($_POST['btnupdate'])) {
+                                        ssfoodstats($_POST['district']);
+                                    } else {
+                                        echo '<h4 class="card-title">Food Statistics</h4>';
+                                    }
 
-                                                                                ?></h4>
+                                    ?>
                                     <p class="card-subtitle">Your Statistics</p>
                                 </div>
                                 <!-- <div class="media-right">
@@ -828,10 +824,199 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php countusers(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            countdistrict($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        ?></h4>
                                     </div>
                                 </div>
                             </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Paid Users</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                           dispaidstats($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            dispaidstatsper($_POST['district']);
+                                                                         } else {
+                                                                             echo '0';
+                                                                         }
+
+                                                                        
+                                                                        ?></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Unpaid Users</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
+                                                                           disunpaidstats($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            disunpaidstatsper($_POST['district']);
+                                                                         } else {
+                                                                             echo '0';
+                                                                         } ?></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Confirmed Users</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
+                                                                           disconfstats($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            disconfstatsper($_POST['district']);
+                                                                         } else {
+                                                                             echo '0%';
+                                                                         }?></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Unconfirmed Users</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
+                                                                           disunconfstats($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            disunconfstatsper($_POST['district']);
+                                                                         } else {
+                                                                             echo '0%';
+                                                                         } ?></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Total Amount</strong></a><br>
+                                        <!-- <div class="d-flex align-items-center">
+                                            <small class="text-black-50 text-uppercase mr-2">Course</small>
+                                            <a href="student-take-course.html">Angular in Steps</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <!-- <span class="text-black-50 mr-3">Great</span> -->
+                                        <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
+                                                                           dispaidstatstotal($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            dispaidstatspertotal($_POST['district']);
+                                                                         } else {
+                                                                             echo '0';
+                                                                         } ?></h4>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
+                    <br>
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="media align-items-center">
+
+
+                                <div class="media-body">
+                                    <?php
+                                    if (isset($_POST['btnupdate'])) {
+                                        sfoodstats($_POST['district']);
+                                    } else {
+                                        echo '<h4 class="card-title">Food Statistics</h4>';
+                                    }
+
+                                    ?>
+                                    <p class="card-subtitle">Your Statistics</p>
+                                </div>
+                                <!-- <div class="media-right">
+                                    <a class="btn btn-sm btn-primary" href="#">Quiz results</a>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <ul class="list-group list-group-fit mb-0">
+
+
+
+                            <!-- <li class="list-group-item">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <a class="text-body" href="#"><strong>Total Users</strong></a><br>
+                                       
+                                    </div>
+                                    <div class="media-right text-center d-flex align-items-center">
+                                        <h4 class="mb-0 text-success"><?php
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            countdistrict($_POST['district']);
+                                                                        } else {
+                                                                            echo '0';
+                                                                        }
+
+                                                                        ?></h4>
+                                    </div>
+                                </div>
+                            </li> -->
                             <li class="list-group-item">
                                 <div class="media align-items-center">
                                     <div class="media-body">
@@ -964,7 +1149,7 @@ $user = users();
                                     </div>
                                 </div>
                             </li>
-                            
+
 
 
 
