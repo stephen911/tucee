@@ -41,7 +41,7 @@
                     </li>
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="food.php">
-                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Food Stats
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  District Stats
                         </a>
                     </li>
                     <!-- <li class="sidebar-menu-item active">
