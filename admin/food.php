@@ -831,11 +831,7 @@ $user = users();
                                                                             echo '0';
                                                                         }
 
-                                                                        if (isset($_POST['btnupdate'])) {
-                                                                            dispaidstatsper($_POST['district']);
-                                                                        } else {
-                                                                            echo '(0%)';
-                                                                        }
+                                                                        
 
                                                                         ?></h4>
                                     </div>

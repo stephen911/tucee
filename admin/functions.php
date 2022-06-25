@@ -165,7 +165,7 @@ function dispaidstatstotal($district)
     include 'starter.php';
     // $id = $_GET['id'];
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
-    $count = mysqli_num_rows($c);
+    $count = mysqli_num_rows($c); 
     echo '<h4 class="mb-0 text-success">'.$count * 70 .'</h4>';
     
 }
@@ -175,11 +175,13 @@ function dispaidstatspertotal($district)
     include 'starter.php';
     // $id = $_GET['id'];
 
-    $c = mysqli_query($conn, "SELECT * FROM users");
+    $c = mysqli_query($conn, "SELECT * FROM transactions");
     $count2 = mysqli_num_rows($c);
+    $tot = $count2 * 70;
+
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
     $count = mysqli_num_rows($c);
-    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+    echo '<h4 class="mb-0 text-success">('.round(($count / $tot) * 100 , 2).'%)</h4>';
 
 }
 
@@ -221,9 +223,11 @@ function disunpaidstats($district)
 {
     include 'starter.php';
     // $id = $_GET['id'];
-    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus=''");
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count2 = mysqli_num_rows($c);
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
     $count = mysqli_num_rows($c);
-    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    echo '<h4 class="mb-0 text-success">'.$count2 - $count.'</h4>';
     
     // if ($confiu) {
     //     echo 'Updated Successfully';
@@ -241,9 +245,11 @@ function disunpaidstatsper($district)
 
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
     $count2 = mysqli_num_rows($c);
-    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus=''");
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
     $count = mysqli_num_rows($c);
-    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+
+    $val = $count2 - $count;
+    echo '<h4 class="mb-0 text-success">('.round(($val / $count2) * 100 , 2).'%)</h4>';
     // echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
     // if ($confiu) {
     //     echo 'Updated Successfully';
@@ -281,10 +287,12 @@ function disconfstatsper($district)
 function disunconfstats($district)
 {
     include 'starter.php';
-    // $id = $_GET['id'];
-    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm=''");
-    $count = mysqli_num_rows($c);
-    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
+    $count2 = mysqli_num_rows($c);
+    $ci = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm='confirmed'");
+    $count = mysqli_num_rows($ci);
+    
+    echo '<h4 class="mb-0 text-success">'.$count2 - $count.'</h4>';
     
     // if ($confiu) {
     //     echo 'Updated Successfully';
@@ -300,9 +308,11 @@ function disunconfstatsper($district)
 
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district'");
     $count2 = mysqli_num_rows($c);
-    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm=''");
-    $count = mysqli_num_rows($c);
-    echo '<h4 class="mb-0 text-success">('.round(($count / $count2) * 100 , 2).'%)</h4>';
+    $ci = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm='confirmed'");
+    $count = mysqli_num_rows($ci);
+
+    $val = $count2 - $count;
+    echo '<h4 class="mb-0 text-success">('.round(($val / $count2) * 100 , 2).'%)</h4>';
     // echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
     // if ($confiu) {
     //     echo 'Updated Successfully';
