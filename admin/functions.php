@@ -145,6 +145,19 @@ function showdiscert($discert, $district)
 }
 
 
+function settdate($tdate, $district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $confiu = mysqli_query($conn, "UPDATE users SET tdate ='$tdate' WHERE district='$district'");
+    if ($confiu) {
+        echo 'Updated Successfully';
+    } else {
+        echo 'Failed to update record . Try again';
+    }
+}
+
+
 
 
 function showdisquiz($disquiz, $district)
@@ -428,6 +441,7 @@ function cgafoodstats($district)
     //     echo 'Failed to update record . Try again';
     // }
 }
+
 
 function sfoodstats($district)
 {

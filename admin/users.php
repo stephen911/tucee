@@ -500,7 +500,7 @@ $user = users();
     <script src="../assets/js/sweetalert2.all.min.js"></script>
     <script src="../assets/js/regions.js"></script>
 
-    <script src="../assets/js/view.js"></script>
+    <!-- <script src="../assets/js/view.js"></script> -->
 
     <!-- Highlight.js -->
     <script src="../assets/js/hljs.js"></script>

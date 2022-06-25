@@ -51,6 +51,13 @@ require 'functions.php';
             showdiscert($discert, $district);
 
             break;
+
+        case 'settdate':
+            extract($_POST);
+            // extract($_POST);
+            settdate($tdate, $district);
+
+            break;
         
 
         case 'login':

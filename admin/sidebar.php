@@ -44,6 +44,11 @@
                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  District Stats
                         </a>
                     </li>
+                    <li class="sidebar-menu-item ">
+                        <a class="sidebar-menu-button" href="training.php">
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Training Date
+                        </a>
+                    </li>
                     <!-- <li class="sidebar-menu-item active">
                                             <a class="sidebar-menu-button"
                                                href="renewal.php">

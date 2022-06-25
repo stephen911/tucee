@@ -1002,7 +1002,7 @@ $user = users();
 
                             <form action="" method="POST" class="confirm">
                                 <input id="confirm" type='hidden' value="confirmed">
-                                <input id="certname" type="hidden" placeholder="Name to be shown on Certificate" value="<?php echo  $user['id']; ?>" class="form-control" name="id">
+                                <input id="certname" type="hidden" placeholder="Name to be shown on Certificate" value="</?php echo  $user['id']; ?>" class="form-control" name="id">
 
 
 
