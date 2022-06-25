@@ -159,6 +159,109 @@ function showdisquiz($disquiz, $district)
     }
 }
 
+
+
+function foodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Jollof with chicken'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function jpfoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Jollof with chicken' AND paystatus='paid'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+function jcfoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Jollof with chicken' AND confirm='confirmed'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function gafoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Ga-kenkey with Sardine'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+function pgafoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Ga-kenkey with Sardine' AND paystatus='paid'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function cgafoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+    $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND foodpref='Ga-kenkey with Sardine' AND confirm='confirmed'");
+    $count = mysqli_num_rows($c);
+    echo '<h4 class="mb-0 text-success">'.$count.'</h4>';
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+function sfoodstats($district)
+{
+    include 'starter.php';
+    // $id = $_GET['id'];
+
+    echo $district;
+    // if ($confiu) {
+    //     echo 'Updated Successfully';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
+}
+
+
+
 function register($name, $email, $password)
 {
     $password = md5($password);

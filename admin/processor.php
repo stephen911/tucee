@@ -38,6 +38,12 @@ require 'functions.php';
             showdisquiz($disquiz, $district);
 
             break;
+        case 'food':
+            extract($_POST);
+            // extract($_POST);
+            foodstats($district);
+
+            break;
 
         case 'showdiscert':
             extract($_POST);

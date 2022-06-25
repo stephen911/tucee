@@ -529,7 +529,7 @@ $user = users();
     <script src="default/files/assets/pages/data-table/js/dataTables.bootstrap4.min.js"></script>
     <script src="default/files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="default/files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <!-- <-- <i18next.min.js --> -->
+    <!-- <-- <i18next.min.js --> 
     <!-- <script type="text/javascript" src="default/files/bower_components/i18next/i18next.min.js"></script> -->
     <!-- <script type="text/javascript" -->
     <!-- src="default/files/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script> -->
