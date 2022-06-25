@@ -36,7 +36,7 @@
                     </li>
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="quiz.php">
-                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Quiz amd Eval
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Quiz and Eval
                         </a>
                     </li>
                     <li class="sidebar-menu-item ">
