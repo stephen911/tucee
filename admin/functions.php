@@ -193,7 +193,7 @@ function dispaidstatspertotal($district)
     $tot = $count2 * 70;
 
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
-    $count = mysqli_num_rows($c);
+    $count = mysqli_num_rows($c) * 70;
     echo '<h4 class="mb-0 text-success">('.round(($count / $tot) * 100 , 2).'%)</h4>';
 
 }
@@ -240,7 +240,9 @@ function disunpaidstats($district)
     $count2 = mysqli_num_rows($c);
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
     $count = mysqli_num_rows($c);
-    echo '<h4 class="mb-0 text-success">'.$count2 - $count.'</h4>';
+
+    $val = $count2 - $count;
+    echo '<h4 class="mb-0 text-success">'.$val.'</h4>';
     
     // if ($confiu) {
     //     echo 'Updated Successfully';
@@ -304,8 +306,9 @@ function disunconfstats($district)
     $count2 = mysqli_num_rows($c);
     $ci = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND confirm='confirmed'");
     $count = mysqli_num_rows($ci);
-    
-    echo '<h4 class="mb-0 text-success">'.$count2 - $count.'</h4>';
+
+    $val = $count2 - $count;
+    echo '<h4 class="mb-0 text-success">'.$val.'</h4>';
     
     // if ($confiu) {
     //     echo 'Updated Successfully';
