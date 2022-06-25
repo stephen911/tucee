@@ -295,16 +295,16 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list-group-item">
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-schname">
                                                 <div class="form-row">
                                                     <label id="label-schname" for="schname" class="col-md-3 col-form-label form-label">Name of School</label>
                                                     <div class="col-md-9">
-                                                        <input id="schname" type="text" required="required" placeholder="Name of School" value="<?php echo ($user['nameofschool'] == '') ? '' : $user['nameofschool']; ?>" class="form-control" name="nameofschool">
+                                                        <input id="schname" type="text" required="required" placeholder="Name of School" value="</?php echo ($user['nameofschool'] == '') ? '' : $user['nameofschool']; ?>" class="form-control" name="nameofschool">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
 
