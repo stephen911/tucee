@@ -31,12 +31,12 @@
                     </li>
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="cert.php">
-                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Cert
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show / Hide Cert
                         </a>
                     </li>
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="quiz.php">
-                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show Quiz amd Eval
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>  Show / Hide Quiz and Eval
                         </a>
                     </li>
                     <li class="sidebar-menu-item ">
