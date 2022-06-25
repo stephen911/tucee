@@ -222,7 +222,8 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php countpaid();  percentage();?></h4>
+                                        <h4 class="mb-0 text-success"><?php countpaid();
+                                                                        percentage(); ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -237,7 +238,8 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php unpaid(); unpaidpercentage(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php unpaid();
+                                                                        unpaidpercentage(); ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -252,7 +254,8 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php confirmedusers(); cpercentage(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php confirmedusers();
+                                                                        cpercentage(); ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -267,7 +270,8 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php unconfirmedusers(); ucpercentage(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php unconfirmedusers();
+                                                                        ucpercentage(); ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -529,7 +533,7 @@ $user = users();
     <script src="default/files/assets/pages/data-table/js/dataTables.bootstrap4.min.js"></script>
     <script src="default/files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="default/files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <!-- <-- <i18next.min.js --> 
+    <!-- <-- <i18next.min.js -->
     <!-- <script type="text/javascript" src="default/files/bower_components/i18next/i18next.min.js"></script> -->
     <!-- <script type="text/javascript" -->
     <!-- src="default/files/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script> -->

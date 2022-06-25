@@ -797,7 +797,7 @@ $user = users();
                                     if (isset($_POST['btnupdate'])) {
                                         ssfoodstats($_POST['district']);
                                     } else {
-                                        echo '<h4 class="card-title">Food Statistics</h4>';
+                                        echo '<h4 class="card-title">District Statistics</h4>';
                                     }
 
                                     ?>
@@ -831,6 +831,12 @@ $user = users();
                                                                             echo '0';
                                                                         }
 
+                                                                        if (isset($_POST['btnupdate'])) {
+                                                                            dispaidstatsper($_POST['district']);
+                                                                        } else {
+                                                                            echo '(0%)';
+                                                                        }
+
                                                                         ?></h4>
                                     </div>
                                 </div>
@@ -848,18 +854,18 @@ $user = users();
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
                                         <h4 class="mb-0 text-success"><?php
                                                                         if (isset($_POST['btnupdate'])) {
-                                                                           dispaidstats($_POST['district']);
+                                                                            dispaidstats($_POST['district']);
                                                                         } else {
                                                                             echo '0';
                                                                         }
 
                                                                         if (isset($_POST['btnupdate'])) {
                                                                             dispaidstatsper($_POST['district']);
-                                                                         } else {
-                                                                             echo '0';
-                                                                         }
+                                                                        } else {
+                                                                            echo '(0%)';
+                                                                        }
 
-                                                                        
+
                                                                         ?></h4>
                                     </div>
                                 </div>
@@ -876,16 +882,16 @@ $user = users();
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
                                         <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
-                                                                           disunpaidstats($_POST['district']);
+                                                                            disunpaidstats($_POST['district']);
                                                                         } else {
                                                                             echo '0';
                                                                         }
 
                                                                         if (isset($_POST['btnupdate'])) {
                                                                             disunpaidstatsper($_POST['district']);
-                                                                         } else {
-                                                                             echo '0';
-                                                                         } ?></h4>
+                                                                        } else {
+                                                                            echo '(0%)';
+                                                                        } ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -901,16 +907,16 @@ $user = users();
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
                                         <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
-                                                                           disconfstats($_POST['district']);
+                                                                            disconfstats($_POST['district']);
                                                                         } else {
                                                                             echo '0';
                                                                         }
 
                                                                         if (isset($_POST['btnupdate'])) {
                                                                             disconfstatsper($_POST['district']);
-                                                                         } else {
-                                                                             echo '0%';
-                                                                         }?></h4>
+                                                                        } else {
+                                                                            echo '(0%)';
+                                                                        } ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -926,16 +932,16 @@ $user = users();
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
                                         <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
-                                                                           disunconfstats($_POST['district']);
+                                                                            disunconfstats($_POST['district']);
                                                                         } else {
                                                                             echo '0';
                                                                         }
 
                                                                         if (isset($_POST['btnupdate'])) {
                                                                             disunconfstatsper($_POST['district']);
-                                                                         } else {
-                                                                             echo '0%';
-                                                                         } ?></h4>
+                                                                        } else {
+                                                                            echo '(0%)';
+                                                                        } ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -951,16 +957,16 @@ $user = users();
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
                                         <h4 class="mb-0 text-success"><?php if (isset($_POST['btnupdate'])) {
-                                                                           dispaidstatstotal($_POST['district']);
+                                                                            dispaidstatstotal($_POST['district']);
                                                                         } else {
                                                                             echo '0';
                                                                         }
 
                                                                         if (isset($_POST['btnupdate'])) {
                                                                             dispaidstatspertotal($_POST['district']);
-                                                                         } else {
-                                                                             echo '0';
-                                                                         } ?></h4>
+                                                                        } else {
+                                                                            echo '(0%)';
+                                                                        } ?></h4>
                                     </div>
                                 </div>
                             </li>
@@ -1321,68 +1327,7 @@ $user = users();
     </div>
 
 
-    <!-- <script>
-        $(document).ready(function() {
-            $('#example').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            });
-        });
-    </script> -->
-
-    <!-- jQuery -->
-    <!-- <script src="default/assets/vendor/jquery.min.js"></script> -->
-
-    <!-- Bootstrap -->
-    <script src="../assets/vendor/popper.min.js"></script>
-    <script src="../assets/vendor/bootstrap.min.js"></script>
-
-    <!-- Perfect Scrollbar -->
-    <script src="../assets/vendor/perfect-scrollbar.min.js"></script>
-
-    <!-- MDK -->
-    <script src="../assets/vendor/dom-factory.js"></script>
-    <script src="../assets/vendor/material-design-kit.js"></script>
-
-    <!-- App JS -->
-    <script src="../assets/js/app.js"></script>
-
-    <!-- Highlight.js -->
-    <script src="../assets/js/hljs.js"></script>
-
-    <!-- App Settings (safe to remove) -->
-    <script src="../assets/js/app-settings.js"></script>
-
-    <!-- List.js -->
-    <script src="../assets/vendor/list.min.js"></script>
-    <script src="../assets/js/list.js"></script>
-
-    <!-- Tables -->
-    <script src="../assets/js/toggle-check-all.js"></script>
-    <script src="../assets/js/check-selected-row.js"></script>
-
-
-
-
-
-
-
-    <!-- <script type="text/javascript" src="default/files/bower_components/i18next/i18next.min.js"></script> -->
-    <!-- <script type="text/javascript" -->
-    <!-- src="default/files/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script> -->
-    <!-- <script type="text/javascript" -->
-    <!-- src="default/files/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script> -->
-    <!-- <script type="text/javascript" src="default/files/bower_components/jquery-i18next/jquery-i18next.min.js"></script> -->
-    <!-- Custom js -->
-    <!-- <script src="default/files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script> -->
-    <!-- <script src="default/files/assets/js/pcoded.min.js"></script> -->
-    <!-- <script src="default/files/assets/js/vartical-layout.min.js"></script> -->
-    <!-- <script src="default/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script> -->
-    <!-- <script type="text/javascript" src="default/files/assets/js/script.js"></script> -->
-
-
+  
 
     <!-- jQuery -->
     <script src="../assets/vendor/jquery.min.js"></script>

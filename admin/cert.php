@@ -135,7 +135,7 @@ $user = users();
                             </form>
                             
                             <!-- activate district cert -->
-                            <!-- <br>
+                            <br>
 
                             <form action="" method="POST" class="showdiscert">
                                 <div class="card">
@@ -739,12 +739,12 @@ $user = users();
 
 
                                 <div class="page-nav__content">
-                                    <button type="submit" name="btnupdate" class="btn btn-success">Update District Cert and eval</button>
+                                    <button type="submit" name="btnupdate" class="btn btn-success">Update District Cert</button>
                                 </div>
 
 
 
-                            </form> -->
+                            </form>
                             
                             <!-- <form action="" method="post">
 

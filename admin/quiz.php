@@ -131,7 +131,7 @@ $user = users();
                             </form>
 
                             <!-- activate district quiz -->
-                            <!-- <br>
+                            <br>
                             <form action="" method="POST" class="showdisquiz">
                                 <div class="card">
                                     <div class="list-group-item">
@@ -734,20 +734,20 @@ $user = users();
 
 
                                 <div class="page-nav__content">
-                                    <button type="submit" name="btnupdate" class="btn btn-success">Update District Quiz</button>
+                                    <button type="submit" name="btnupdate" class="btn btn-success">Update District Quiz and Eval</button>
                                 </div>
 
 
 
-                            </form> -->
+                            </form> 
                             <!-- <form action="" method="post">
 
                             <div class="page-nav__content"  style="display: inline;">
                                     <button type="submit" name="btnupdate" class="btn btn-success">Confirm Participation</button>
                                 </div>
-                            </form> -->
+                            </form>
 
-                            <!-- <div class="card border-left-3 border-left-primary card-2by1">
+                            <div class="card border-left-3 border-left-primary card-2by1">
                                 <div class="card-body">
                                     <div class="media flex-wrap align-items-center">
                                         <div class="media-left">
