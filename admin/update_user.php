@@ -897,6 +897,25 @@ $user = upusers();
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group m-0" role="group" aria-labelledby="label-pay">
+                                                <div class="form-row">
+                                                    <label id="label-heard" for="pay" class="col-md-3 col-form-label form-label">Pay Status</label>
+                                                    <div class="col-md-9">
+                                                        <select id="custom-select2" class="form-control custom-select" name="pay">
+                                                            <option selected value="<?php echo ($user['paystatus'] == '') ? '' : $user['paystatus']; ?>"><?php echo ($user['paystatus'] == 'Set paystatus') ? '' : $user['paystatus']; ?>
+                                                            </option>
+                                                            <option value="paid">Paid</option>
+                                                            <option value="">No</option>
+                                                            
+                                                            
+
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
 

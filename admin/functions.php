@@ -80,12 +80,12 @@ function upusers()
     return $row;
 }
 
-function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $lincesed, $nameofschool, $region, $district, $foodpref, $heard, $tdate, $confirm)
+function updateuser($id, $title, $name, $gender, $email, $contact, $telegram, $lincesed, $nameofschool, $region, $district, $foodpref, $heard, $tdate, $confirm, $pay)
 {
     include 'starter.php';
     // $id = $_GET['id'];
     extract($_POST);
-    $up = mysqli_query($conn, "UPDATE users SET title='$title', name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed ='$lincesed', nameofschool='$nameofschool', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate', confirm='$confirm' WHERE id='$id'  ");
+    $up = mysqli_query($conn, "UPDATE users SET title='$title', name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed ='$lincesed', nameofschool='$nameofschool', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate', confirm='$confirm', paystatus='$pay' WHERE id='$id'  ");
     if ($up) {
         echo 'Updated Successfully ';
     } else {
@@ -724,6 +724,14 @@ function countpaid()
     echo $count;
 }
 
+function countpaidstatus()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM users WHERE paystatus="paid"');
+    $count = mysqli_num_rows($c);
+    echo $count;
+}
+
 function total()
 {
     include 'starter.php';
@@ -759,6 +767,16 @@ function percentage()
 {
     include 'starter.php';
     $c = mysqli_query($conn, 'SELECT * FROM transactions');
+    $count = mysqli_num_rows($c);
+    $c2 = mysqli_query($conn, 'SELECT * FROM users');
+    $count2 = mysqli_num_rows($c2);
+    echo '('.round(($count / $count2) * 100 , 2).'%)';
+}
+
+function percentagestatus()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM users WHERE paystatus="paid"');
     $count = mysqli_num_rows($c);
     $c2 = mysqli_query($conn, 'SELECT * FROM users');
     $count2 = mysqli_num_rows($c2);

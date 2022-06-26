@@ -492,7 +492,22 @@ $('.register').submit(function(e){
   
 // });
 
+$('.payme').click(function(e) {
+  e.preventDefault();
+  var staff = {
+    url: 'processor.php?action=pay',
+    type: 'post',
+    data: {'id' : $(this).attr('id')},
+    // cache: false,
+    // contentType: false,
+    // processData: false,
+    beforeSend: before,
+    success: resp
 
+};
+$.ajax(staff);
+
+});
 
 
 
@@ -518,24 +533,7 @@ $('.changepass').submit(function(e){
   $.ajax(staff);
 });
 
-$('.payme').click(function(e) {
-  e.preventDefault();
-  var staff = {
-    url: 'processor.php?action=pay',
-    type: 'post',
-    data: {'id' : $(this).attr('id')},
-    // cache: false,
-    // contentType: false,
-    // processData: false,
-    beforeSend: before,
-    success: resp
 
-};
-$.ajax(staff);
-  
-
-  
-});
 
 
     
