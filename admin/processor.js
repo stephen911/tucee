@@ -473,26 +473,7 @@ $('.register').submit(function(e){
 });
 
 
-// $(document).on(click, ".payme", function(e) {
-//   e.preventDefault();
-//   var staff = {
-//     url: 'processor.php?action=pay',
-//     type: 'post',
-//     data: {'id' : $(this).attr('id')},
-//     // cache: false,
-//     // contentType: false,
-//     // processData: false,
-//     beforeSend: before,
-//     success: resp
-
-// };
-// $.ajax(staff);
-  
-
-  
-// });
-
-$('.payme').click(function(e) {
+$(document).on("click", ".payme", function(e) {
   e.preventDefault();
   var staff = {
     url: 'processor.php?action=pay',
@@ -506,8 +487,27 @@ $('.payme').click(function(e) {
 
 };
 $.ajax(staff);
+  
 
+  
 });
+
+// $('.payme').click(function(e) {
+//   e.preventDefault();
+//   var staff = {
+//     url: 'processor.php?action=pay',
+//     type: 'post',
+//     data: {'id' : $(this).attr('id')},
+//     // cache: false,
+//     // contentType: false,
+//     // processData: false,
+//     beforeSend: before,
+//     success: resp
+
+// };
+// $.ajax(staff);
+
+// });
 
 
 
