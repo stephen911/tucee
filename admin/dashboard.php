@@ -286,7 +286,7 @@ $user = users();
                                     </div>
                                     <div class="media-right text-center d-flex align-items-center">
                                         <!-- <span class="text-black-50 mr-3">Great</span> -->
-                                        <h4 class="mb-0 text-success"><?php total(); ?></h4>
+                                        <h4 class="mb-0 text-success"><?php totalstatus(); ?></h4>
                                     </div>
                                 </div>
                             </li>

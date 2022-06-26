@@ -179,7 +179,7 @@ function dispaidstatstotal($district)
     // $id = $_GET['id'];
     $c = mysqli_query($conn, "SELECT * FROM users WHERE district='$district' AND paystatus='paid'");
     $count = mysqli_num_rows($c); 
-    echo '<h4 class="mb-0 text-success">'.$count * 70 .'</h4>';
+    echo '<h4 class="mb-0 text-success">Gh¢ '.$count * 70 .'</h4>';
     
 }
 
@@ -736,6 +736,15 @@ function total()
 {
     include 'starter.php';
     $c = mysqli_query($conn, 'SELECT * FROM transactions');
+    $count = mysqli_num_rows($c);
+    echo 'Gh¢ '.$count* 70;
+}
+
+
+function totalstatus()
+{
+    include 'starter.php';
+    $c = mysqli_query($conn, 'SELECT * FROM users WHERE paystatus="paid"');
     $count = mysqli_num_rows($c);
     echo 'Gh¢ '.$count* 70;
 }
