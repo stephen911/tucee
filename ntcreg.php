@@ -172,7 +172,7 @@ $user = users();
                                 <div class="card-body">
                                     <div class="media align-items-center">
                                         <div class="media-body">
-                                            No Payment has been made yet
+                                            Please Continue with your Registration.
                                             
                                         </div>
                                         
