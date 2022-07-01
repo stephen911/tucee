@@ -915,6 +915,25 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- <div class="list-group-item" id="east" style="display: none;">
+                                            <div class="form-group m-0" role="group" aria-labelledby="label-heard">
+                                                <div class="form-row">
+                                                    <label id="label-heard" for="heard" class="col-md-3 col-form-label form-label">Venue</label>
+                                                    <div class="col-md-9">
+                                                        <select required="required" id="custom-select87" class="form-control custom-select" name="heard">
+                                                            <option selected value="</?php echo ($user['venue'] == '') ? 'venue' : $user['venue']; ?>"></?php echo ($user['venue'] == 'select your venue') ? '' : $user['venue']; ?>
+                                                            </option>
+                                                            <option value="Kwabenya">Kwabenya</option>
+                                                            <option value="Ashonmang">Ashonmang</option>
+                                                            
+                                                            <option value="Other">other</option>
+
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
 
                                         <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-tdate">

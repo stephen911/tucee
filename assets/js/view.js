@@ -3,12 +3,12 @@
 // });
 
 
-const el = document.getElementById('custom-select87');
+const el = document.getElementById('custom-select8');
 
 // const all = document.getElementsByClassName('all');
 const east = document.getElementById('east');
 // const tertiary = document.getElementById('tertiary2');
-const specify = document.getElementById('specify');
+// const specify = document.getElementById('specify');
 
 el.addEventListener('change', function handleChange(event) {
   // if (event.target.value == 'none') {
@@ -21,16 +21,16 @@ el.addEventListener('change', function handleChange(event) {
 //   } else {
 //     shs.style.display = 'none';
 //   }
-  if (event.target.value == 'Ga - East Municipality') {
+  if (event.target.value == 'GA EAST MUNICIPAL') {
     east.style.display = 'block';
   } else {
     east.style.display = 'none';
   }
-  if (event.target.value == 'other') {
-    specify.style.display = 'block';
-  } else {
-    specify.style.display = 'none';
-  }
+  // if (event.target.value == 'other') {
+  //   specify.style.display = 'block';
+  // } else {
+  //   specify.style.display = 'none';
+  // }
 });
 
 

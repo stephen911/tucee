@@ -17,13 +17,22 @@ function login($email, $password)
     // extract($_POST);
     $email = mysqli_real_escape_string($conn, $email);
     $password = mysqli_real_escape_string($conn, $password);
+    $passwordc = $password;
     $password = md5($password);
     $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     $sel2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+    $sel3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND contact = '$passwordc'");
+
 
     if (mysqli_num_rows($sel) >= 1) {
         if (mysqli_num_rows($sel2) >= 1) {
             $row = mysqli_fetch_array($sel2);
+            session_start();
+            $_SESSION['id'] = $row['id'];
+
+            echo 'loginsuccess';
+        }elseif (mysqli_num_rows($sel3) >= 1) {
+            $row = mysqli_fetch_array($sel3);
             session_start();
             $_SESSION['id'] = $row['id'];
 
