@@ -196,14 +196,14 @@ $user = users();
                             <form action="" method="POST" class="updateuser">
                                 <div class="card">
                                     <div class="list-group list-group-fit">
-                                        <div class="list-group-item">
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-status">
                                                 <div class="form-row">
                                                     <label id="label-status" for="status" class="col-md-3 col-form-label form-label">Title
                                                     </label>
                                                     <div class="col-md-9">
                                                         <select id="custom-select" class="form-control custom-select" name="title" required="required">
-                                                            <option selected value="<?php echo ($user['title'] == '') ? '' : $user['title']; ?>"><?php echo ($user['title'] == '') ? 'Select your title' : $user['title']; ?></option>
+                                                            <option selected value="</?php echo ($user['title'] == '') ? '' : $user['title']; ?>"></?php echo ($user['title'] == '') ? 'Select your title' : $user['title']; ?></option>
                                                             <option value="Dr.">Dr.</option>
                                                             <option value="Fr.">Fr.</option>
                                                             <option value="Sis.">Sis.</option>
@@ -216,7 +216,7 @@ $user = users();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-certname">
                                                 <div class="form-row">
