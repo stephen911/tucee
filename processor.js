@@ -172,7 +172,7 @@ $(function () {
     } else if (response == "enrolled") {
       swal({
         title: "Congratulations!",
-        html: "Thank you for enrolling in our Certication in Counseling Program.",
+        html: "Thank you for enrolling in our Certification in Counseling Program.",
         timer: 3000,
         type: "success",
         padding: "2em",
