@@ -86,7 +86,19 @@ function confirmuser($id, $confirmation)
     }
 }
 
-function updateuser($id, $name, $gender, $email, $contact, $telegram, $lincesed, $region, $district, $foodpref, $heard, $tdate)
+function enrolluser($id, $enroll)
+{
+    include 'starter.php';
+    // $id = $_SESSION['id'];
+    $confn = mysqli_query($conn, "UPDATE users SET enroll ='$enroll' WHERE id='$id'  ");
+    if ($confn) {
+        echo 'enrolled';
+    } else {
+        echo 'Failed to update record . Try again';
+    }
+}
+
+function updateuser($id, $name, $gender, $email, $contact, $telegram, $region, $district, $foodpref, $heard, $tdate)
 {
     // include 'mail.php';
 
@@ -109,7 +121,7 @@ function updateuser($id, $name, $gender, $email, $contact, $telegram, $lincesed,
     // $gg = mysqli_query($conn, "SELECT * FROM users WHERE id = '$id'");
     // $rg = mysqli_fetch_array($gg);
     // $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
-    if (mysqli_query($conn, "UPDATE users SET name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed ='$lincesed', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate' WHERE id='$id'  ")) {
+    if (mysqli_query($conn, "UPDATE users SET name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate' WHERE id='$id'  ")) {
         echo 'updatesuccess';
         // mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin.' Duplicate', $headers);
     // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);

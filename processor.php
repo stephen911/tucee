@@ -8,7 +8,7 @@ require 'functions.php';
             extract($_POST);
             // extract($_POST);
             
-            updateuser($id, $name, $gender, $email, $contact, $telegram, $lincesed, $region, $district, $foodpref, $heard, $tdate);
+            updateuser($id, $name, $gender, $email, $contact, $telegram, $region, $district, $foodpref, $heard, $tdate);
 
             break;
         
@@ -19,6 +19,14 @@ require 'functions.php';
             
 
             break;
+
+        case 'enrolluser':
+            extract($_POST);
+            // extract($_POST);
+            enrolluser($id, $enroll);
+            
+
+            break;      
 
         case 'login':
             extract($_POST);

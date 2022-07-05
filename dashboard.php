@@ -361,7 +361,7 @@ $user = users();
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <div class="media-body">
-                                                <strong>Telegram Phone Number</strong><br>
+                                                <strong>Alternate Phone Number</strong><br>
                                                 <div class="d-flex align-items-center">
                                                     <!-- <small class="text-black-50 text-uppercase mr-2">Course</small> -->
                                                     <a href="#"><?php echo $user['telegram']; ?></a>

@@ -286,16 +286,16 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list-group-item">
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-lastname">
                                                 <div class="form-row">
                                                     <label id="label-lastname" for="lastname" class="col-md-3 col-form-label form-label">National teachers council license number</label>
                                                     <div class="col-md-9">
-                                                        <input id="lastname" type="text" placeholder="No. should be like PT/000660/2022" value="<?php echo ($user['lincesed'] == '') ? '' : $user['lincesed']; ?>" class="form-control" name="lincesed">
+                                                        <input id="lastname" type="text" placeholder="No. should be like PT/000660/2022" value="</?php echo ($user['lincesed'] == '') ? '' : $user['lincesed']; ?>" class="form-control" name="lincesed">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-schname">
                                                 <div class="form-row">
@@ -395,7 +395,7 @@ $user = users();
                                                                     <option value="AYAWASO NORTH MUNICIPAL">AYAWASO NORTH MUNICIPAL</option>
                                                                     <option value="AYAWASO WEST MUNICIPAL">AYAWASO WEST MUNICIPAL</option>
                                                                     <option value="GA CENTRAL MUNICIPAL">GA CENTRAL MUNICIPAL</option>
-                                                                    <option value="GA EAST MUNICIPAL">GA EAST MUNICIPAL</option>
+                                                                    <option value="GA EAST MUNICIPAL" disabled= "disabled">GA EAST MUNICIPAL</option>
                                                                     <option value="GA NORTH MUNICIPAL">GA NORTH MUNICIPAL</option>
                                                                     <option value="GA SOUTH MUNICIPAL">GA SOUTH MUNICIPAL</option>
                                                                     <option value="GA WEST MUNICIPAL">GA WEST MUNICIPAL</option>
@@ -1140,6 +1140,5 @@ $user = users();
 </body>
 
 
-<!-- Mirrored from learnplus.demo.frontendmatter.com/student-account-edit-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 May 2022 13:24:33 GMT -->
 
 </html>

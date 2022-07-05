@@ -1,423 +1,370 @@
-
-$(function(){
-
+$(function () {
   // alert('hi there');
-   $('#socl').click(function(){
+  $("#socl").click(function () {
     swal({
-        title: "Done!",
-        text: "Record Deleted Successfully",
-        timer: 1000,
-        type: 'success',
-        padding: "2em",
-        // target: document.querySelector("html")
-      });
-   })
+      title: "Done!",
+      text: "Record Deleted Successfully",
+      timer: 1000,
+      type: "success",
+      padding: "2em",
+      // target: document.querySelector("html")
+    });
+  });
 
   //  var re = /\S+@\S+\.\S+/;
 
-    $(document).on('click', "#ddo",function(){
-        swal({
-            title: "Done!",
-            text: "Record Deleted Successfully",
-            timer: 1000,
-            type: 'success',
-            padding: "2em",
-            target: document.querySelector("html")
-          });
-    })
-    
-
-    function resp(response){
-        response = response.trim();
-
-        if(response == "success"){
-            swal.close();
-            swal({
-                title: "Success",
-                text: "Record added Successfully",
-                timer: 1000,
-                type: 'success',
-                padding: "2em",
-                onOpen: function () {
-                  swal.showLoading();
-                },
-              }).then(function (result) {
-                window.location.reload();
-              });
-        }
-        else if(response == 'deleted'){
-
-            swal({
-                title: "Done!",
-                text: "Record Deleted Successfully",
-                timer: 1000,
-                type: 'success',
-                padding: "2em",
-                onOpen: function () {
-                  swal.showLoading();
-                },
-              }).then(function (result) {
-                window.location.reload();
-              });
-
-        }
-
-        else if(response == 'removedfromcart'){
-
-          swal({
-              title: "Done!",
-              text: "Item removed successfusly",
-              timer: 1000,
-              type: 'success',
-              padding: "2em",
-              onOpen: function () {
-                swal.showLoading();
-              },
-            }).then(function (result) {
-              // window.location.reload();
-              $("#cartcount").load('processor/processor.php?action=countcart');
-              $("#minicart").load('processor/processor.php?action=viewcart');
-              $("#cartot").load('processor/processor.php?action=carttotal');
-              $("#vcart").load('processor/processor.php?action=viewmaincart');
-              $("#checkcart").load('processor/processor.php?action=checkoutcart');
-              $("#mku").load('processor/processor.php?action=cartsubtotal');
-              $("#ordtt").load('processor/processor.php?action=carttotal');
-              swal.close();
-              
-            });
-
-      }
-
-
-
-      else if(response == 'couponapplied'){
-
-        swal({
-            title: "Done!",
-            text: "Coupon applied Successfuly",
-            timer: 1000,
-            type: 'success',
-            padding: "2em",
-            onOpen: function () {
-              swal.showLoading();
-            },
-          }).then(function (result) {
-            // window.location.reload();
-            $("#cartcount").load('processor/processor.php?action=countcart');
-            $("#minicart").load('processor/processor.php?action=viewcart');
-            $("#cartot").load('processor/processor.php?action=carttotal');
-            $("#vcart").load('processor/processor.php?action=viewmaincart');
-            $("#checkcart").load('processor/processor.php?action=checkoutcart');
-            // $("#swee").load('processor/processor.php?action=carttotal1');
-            $("#diskc").load('processor/processor.php?action=discount');
-
-            $("#mku").load('processor/processor.php?action=cartsubtotal');
-           
-              $("#ordtt").load('processor/processor.php?action=carttotal');
-            swal.close();
-            
-          });
-
-    }
-
-        else if(response == 'addedtocart'){
-
-          swal({
-              title: "Done!",
-              text: "Item Added",
-              timer: 1000,
-              type: 'success',
-              padding: "2em",
-              onOpen: function () {
-                swal.showLoading();
-              },
-            }).then(function (result) {
-              // window.location.reload();
-              $("#cartcount").load('processor/processor.php?action=countcart');
-              $("#minicart").load('processor/processor.php?action=viewcart');
-              $("#cartot").load('processor/processor.php?action=carttotal');
-              swal.close();
-            });
-
-      }
-
-        else if(response == 'loginsuccess'){
-
-            swal({
-                title: "Login Successfull!",
-                text: "will be redirected soon",
-                timer: 2000,
-                type: 'success',
-                padding: "2em",
-                onOpen: function () {
-                  swal.showLoading();
-                },
-              }).then(function (result) {
-                window.location="dashboard.php";
-              });
-
-        }
-
-        else if(response == 'changepasssuccess'){
-
-          swal({
-              title: "Success",
-              text: "Password updated successfuly",
-              timer: 2000,
-              type: 'success',
-              padding: "2em",
-              onOpen: function () {
-                swal.showLoading();
-              },
-            }).then(function (result) {
-              window.location="dashboard.php";
-            });
-
-      }
-        else if(response == 'Updated Successfully'){
-
-            swal({
-                title: "Congratulations!",
-                html: "You are duly registered for the Counselling training. <br><b>Proceed to make Payment to Confirm Participation. Call 0541 369 429 / 0208 496 496</b><br> An email has been sent to your mail.",
-                timer: 3000,
-                type: 'success',
-                padding: "2em",
-                onOpen: function () {
-                  swal.showLoading();
-                },
-              }).then(function (result) {
-                window.location.reload();
-              });
-
-        }else if(response == 'confirmed'){
-
-          swal({
-              title: "Congratulations!",
-              html: "Your Participation has been confirmed. <br><b>Proceed to make Payment.</b>",
-              timer: 3000,
-              type: 'success',
-              padding: "2em",
-              onOpen: function () {
-                swal.showLoading();
-              },
-            }).then(function (result) {
-              window.location.reload();
-            });
-
-      }
-        else if(response.trim() == 'updatesuccess'){
-
-          swal({
-              title: "Congratulations",
-              text: "You are duly registered for the Counselling training. Proceed to make payment  to confirm your participation  Call 0541 369 429 / 0208 496 496 for any assistance. Thanks",
-              timer: 5000,
-              type: 'success',
-              padding: "2em",
-              onOpen: function () {
-                swal.showLoading();
-              },
-            }).then(function (result) {
-              window.location.replace("payment.php");
-            });
-
-      }
-
-
-
-        else if(response == 'registered'){
-
-          swal({
-              title: "Success",
-              text: "Registration Successful",
-              timer: 1000,
-              type: 'success',
-              padding: "2em",
-              onOpen: function () {
-                swal.showLoading();
-              },
-            }).then(function (result) {
-              window.location="ntcreg.php";
-            });
-
-      }
-
-
-        else if(response == 'loginfailed'){
-
-            swal({
-                title: "Oops!",
-                text: "Record not found in database! ",
-                type: "error",
-                padding: "2em",
-              });
-
-        }
-        else{
-
-            swal({
-                title: "Attention!",
-                text: response,
-                type: "warning",
-                padding: "2em",
-              });
-
-        }
-
-
-    }
-
-    function before()
-{
-    
+  $(document).on("click", "#ddo", function () {
     swal({
-        title: 'Please Wait !',
-        html: 'request in progress...',// add html attribute if you want or remove
-        allowOutsideClick: false,
-        // onBeforeOpen: () => {
-        //     Swal.showLoading()
-        // },
+      title: "Done!",
+      text: "Record Deleted Successfully",
+      timer: 1000,
+      type: "success",
+      padding: "2em",
+      target: document.querySelector("html"),
     });
-}
+  });
 
+  function resp(response) {
+    response = response.trim();
 
+    if (response == "success") {
+      swal.close();
+      swal({
+        title: "Success",
+        text: "Record added Successfully",
+        timer: 1000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
+    } else if (response == "deleted") {
+      swal({
+        title: "Done!",
+        text: "Record Deleted Successfully",
+        timer: 1000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
+    } else if (response == "removedfromcart") {
+      swal({
+        title: "Done!",
+        text: "Item removed successfusly",
+        timer: 1000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        // window.location.reload();
+        $("#cartcount").load("processor/processor.php?action=countcart");
+        $("#minicart").load("processor/processor.php?action=viewcart");
+        $("#cartot").load("processor/processor.php?action=carttotal");
+        $("#vcart").load("processor/processor.php?action=viewmaincart");
+        $("#checkcart").load("processor/processor.php?action=checkoutcart");
+        $("#mku").load("processor/processor.php?action=cartsubtotal");
+        $("#ordtt").load("processor/processor.php?action=carttotal");
+        swal.close();
+      });
+    } else if (response == "couponapplied") {
+      swal({
+        title: "Done!",
+        text: "Coupon applied Successfuly",
+        timer: 1000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        // window.location.reload();
+        $("#cartcount").load("processor/processor.php?action=countcart");
+        $("#minicart").load("processor/processor.php?action=viewcart");
+        $("#cartot").load("processor/processor.php?action=carttotal");
+        $("#vcart").load("processor/processor.php?action=viewmaincart");
+        $("#checkcart").load("processor/processor.php?action=checkoutcart");
+        // $("#swee").load('processor/processor.php?action=carttotal1');
+        $("#diskc").load("processor/processor.php?action=discount");
 
-$('.welcome').submit(function(e){
+        $("#mku").load("processor/processor.php?action=cartsubtotal");
 
+        $("#ordtt").load("processor/processor.php?action=carttotal");
+        swal.close();
+      });
+    } else if (response == "addedtocart") {
+      swal({
+        title: "Done!",
+        text: "Item Added",
+        timer: 1000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        // window.location.reload();
+        $("#cartcount").load("processor/processor.php?action=countcart");
+        $("#minicart").load("processor/processor.php?action=viewcart");
+        $("#cartot").load("processor/processor.php?action=carttotal");
+        swal.close();
+      });
+    } else if (response == "loginsuccess") {
+      swal({
+        title: "Login Successfull!",
+        text: "will be redirected soon",
+        timer: 2000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location = "dashboard.php";
+      });
+    } else if (response == "changepasssuccess") {
+      swal({
+        title: "Success",
+        text: "Password updated successfuly",
+        timer: 2000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location = "dashboard.php";
+      });
+    } else if (response == "Updated Successfully") {
+      swal({
+        title: "Congratulations!",
+        html: "You are duly registered for the Counselling training. <br><b>Proceed to make Payment to Confirm Participation. Call 0541 369 429 / 0208 496 496</b><br> An email has been sent to your mail.",
+        timer: 3000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
+    } else if (response == "confirmed") {
+      swal({
+        title: "Congratulations!",
+        html: "Your Participation has been confirmed. <br><b>Proceed to make Payment.</b>",
+        timer: 3000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
+    } else if (response == "enrolled") {
+      swal({
+        title: "Congratulations!",
+        html: "Thank you for enrolling in our Certication in Counseling Program.",
+        timer: 3000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
+    } else if (response.trim() == "updatesuccess") {
+      swal({
+        title: "Congratulations",
+        text: "You are duly registered for the Counselling training. Proceed to make payment  to confirm your participation  Call 0541 369 429 / 0208 496 496 for any assistance. Thanks",
+        timer: 5000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.replace("payment.php");
+      });
+    } else if (response == "registered") {
+      swal({
+        title: "Success",
+        text: "Registration Successful",
+        timer: 1000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location = "ntcreg.php";
+      });
+    } else if (response == "loginfailed") {
+      swal({
+        title: "Oops!",
+        text: "Record not found in database! ",
+        type: "error",
+        padding: "2em",
+      });
+    } else {
+      swal({
+        title: "Attention!",
+        text: response,
+        type: "warning",
+        padding: "2em",
+      });
+    }
+  }
+
+  function before() {
+    swal({
+      title: "Please Wait !",
+      html: "request in progress...", // add html attribute if you want or remove
+      allowOutsideClick: false,
+      // onBeforeOpen: () => {
+      //     Swal.showLoading()
+      // },
+    });
+  }
+
+  $(".welcome").submit(function (e) {
     e.preventDefault();
     // before();
     var staff = {
-        url: 'processor/processor.php?action=welcome',
-        type: 'post',
-        data: new FormData(this),
-        cache: false,
-        contentType: false,
-        processData: false,
-        beforeSend: before,
-        success: resp
-
+      url: "processor/processor.php?action=welcome",
+      type: "post",
+      data: new FormData(this),
+      cache: false,
+      contentType: false,
+      processData: false,
+      beforeSend: before,
+      success: resp,
     };
     $.ajax(staff);
-});
+  });
 
-
-
-// update user
-$('.updateuser').submit(function(e){
-
-  e.preventDefault();
-  // before();
-  // var id = $(this).attr('id');
-  var staff = {
-      url: 'processor.php?action=update',
-      type: 'post',
+  // update user
+  $(".updateuser").submit(function (e) {
+    e.preventDefault();
+    // before();
+    // var id = $(this).attr('id');
+    var staff = {
+      url: "processor.php?action=update",
+      type: "post",
       data: new FormData(this),
       cache: false,
       contentType: false,
       processData: false,
       beforeSend: before,
-      success: resp
+      success: resp,
+    };
+    $.ajax(staff);
+  });
 
-  };
-  $.ajax(staff);
-});
+  // login
 
-
-// login
-
-$('.login').submit(function(e){
-
-  e.preventDefault();
-  // before();
-  // var id = $(this).attr('id');
-  var staff = {
-      url: 'processor.php?action=login',
-      type: 'post',
+  $(".login").submit(function (e) {
+    e.preventDefault();
+    // before();
+    // var id = $(this).attr('id');
+    var staff = {
+      url: "processor.php?action=login",
+      type: "post",
       data: new FormData(this),
       cache: false,
       contentType: false,
       processData: false,
       beforeSend: before,
-      success: resp
+      success: resp,
+    };
+    $.ajax(staff);
+  });
 
-  };
-  $.ajax(staff);
-});
+  // register
 
-
-
-// register
-
-$('.register').submit(function(e){
-
-  e.preventDefault();
-  // before();
-  // var id = $(this).attr('id');
-  var staff = {
-      url: 'processor.php?action=register',
-      type: 'post',
+  $(".register").submit(function (e) {
+    e.preventDefault();
+    // before();
+    // var id = $(this).attr('id');
+    var staff = {
+      url: "processor.php?action=register",
+      type: "post",
       data: new FormData(this),
       cache: false,
       contentType: false,
       processData: false,
       beforeSend: before,
-      success: resp
-
-  };
-  $.ajax(staff);
-});
-
+      success: resp,
+    };
+    $.ajax(staff);
+  });
 
 
-
-
-
-// change password
-
-$('.changepass').submit(function(e){
-
-  e.preventDefault();
-  // before();
-  // var id = $(this).attr('id');
-  var staff = {
-      url: 'processor.php?action=changepass',
-      type: 'post',
+  $(".enrolluser").submit(function (e) {
+    e.preventDefault();
+    // before();
+    // var id = $(this).attr('id');
+    var staff = {
+      url: "processor.php?action=enrolluser",
+      type: "post",
       data: new FormData(this),
       cache: false,
       contentType: false,
       processData: false,
       beforeSend: before,
-      success: resp
-
-  };
-  $.ajax(staff);
-});
-
+      success: resp,
+    };
+    $.ajax(staff);
+  });
 
 
-//confirm
+  // change password
 
-$('.cfuser').submit(function(e){
-
-  e.preventDefault();
-  // before();
-  // var id = $(this).attr('id');
-  var staff = {
-      url: 'processor.php?action=cfuser',
-      type: 'post',
+  $(".changepass").submit(function (e) {
+    e.preventDefault();
+    // before();
+    // var id = $(this).attr('id');
+    var staff = {
+      url: "processor.php?action=changepass",
+      type: "post",
       data: new FormData(this),
       cache: false,
       contentType: false,
       processData: false,
       beforeSend: before,
-      success: resp
+      success: resp,
+    };
+    $.ajax(staff);
+  });
 
-  };
-  $.ajax(staff);
+  //confirm
+
+  $(".cfuser").submit(function (e) {
+    e.preventDefault();
+    // before();
+    // var id = $(this).attr('id');
+    var staff = {
+      url: "processor.php?action=cfuser",
+      type: "post",
+      data: new FormData(this),
+      cache: false,
+      contentType: false,
+      processData: false,
+      beforeSend: before,
+      success: resp,
+    };
+    $.ajax(staff);
+  });
+
+  
+
 });
-
-
-
-    
-})
-
-

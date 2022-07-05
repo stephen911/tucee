@@ -37,6 +37,11 @@ $user = users();
                                         <span class="sidebar-menu-text">NTC CPD Training</span>
                                     </a>
                                 </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="certCouns.php">
+                                        <span class="sidebar-menu-text">Certificate In Counselling</span>
+                                    </a>
+                                </li>
                                 <!-- <li class="sidebar-menu-item">
                                                     <a class="sidebar-menu-button"
                                                        href="dashboard.php">
