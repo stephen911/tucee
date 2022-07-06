@@ -23,7 +23,7 @@ $user = users();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>NTC CPD Training</title>
+    <title>Certificate in Counselling</title>
 
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
@@ -46,6 +46,9 @@ $user = users();
 
     <!-- sweetalert -->
     <link type="text/css" href="assets/css/sweetalert2.min.css" rel="stylesheet">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <!-- Preloader -->
     <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">

@@ -309,21 +309,59 @@ $(function () {
   });
 
 
-  $(".enrolluser").submit(function (e) {
+  // $(".enrolluser").submit(function (e) {
+  //   e.preventDefault();
+  //   // before();
+  //   // var id = $(this).attr('id');
+  //   var staff = {
+  //     url: "processor.php?action=enrolluser",
+  //     type: "post",
+  //     data: new FormData(this),
+  //     cache: false,
+  //     contentType: false,
+  //     processData: false,
+  //     beforeSend: before,
+  //     success: resp,
+  //   };
+  //   $.ajax(staff);
+  // });
+
+
+  $(document).on("click", ".enrolluser", function (e) {
     e.preventDefault();
-    // before();
-    // var id = $(this).attr('id');
-    var staff = {
-      url: "processor.php?action=enrolluser",
-      type: "post",
-      data: new FormData(this),
-      cache: false,
-      contentType: false,
-      processData: false,
-      beforeSend: before,
-      success: resp,
-    };
-    $.ajax(staff);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to Register Now",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Register Now!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var staff = {
+          url: "processor.php?action=enrolluser",
+          type: "post",
+          // data: { id: $(this).attr("id") },
+          data: new FormData(this),
+          cache: false,
+          contentType: false,
+          processData: false,
+          // cache: false,
+          // contentType: false,
+          // processData: false,
+          beforeSend: before,
+          success: resp,
+        };
+        $.ajax(staff);
+        // Swal.fire(
+        //   'Deleted!',
+        //   'Your file has been deleted.',
+        //   'success'
+        // )
+      }
+    });
   });
 
 
