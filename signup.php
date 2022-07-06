@@ -181,7 +181,7 @@
                                                     <option value="AYAWASO NORTH MUNICIPAL">AYAWASO NORTH MUNICIPAL</option>
                                                     <option value="AYAWASO WEST MUNICIPAL">AYAWASO WEST MUNICIPAL</option>
                                                     <option value="GA CENTRAL MUNICIPAL">GA CENTRAL MUNICIPAL</option>
-                                                    <option value="GA EAST MUNICIPAL">GA EAST MUNICIPAL</option>
+                                                    <option value="GA EAST MUNICIPAL" disabled="disabled">GA EAST MUNICIPAL</option>
                                                     <option value="GA NORTH MUNICIPAL">GA NORTH MUNICIPAL</option>
                                                     <option value="GA SOUTH MUNICIPAL">GA SOUTH MUNICIPAL</option>
                                                     <option value="GA WEST MUNICIPAL">GA WEST MUNICIPAL</option>
