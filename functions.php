@@ -238,8 +238,19 @@ function payment($uid, $ref, $amount)
     include 'starter.php';
     $dateadded = date('jS F,Y');
 
+  
+    
+
+
+
     $ins = mysqli_query($conn, "INSERT INTO transactions (uid,transid,amount,dateadded) VALUES('$uid','$ref','$amount','$dateadded')");
     $up = mysqli_query($conn, "UPDATE users SET paystatus ='paid' WHERE id ='$uid'");
+
+    if($uid == ""){
+        $goo = "Empty uid: " . $uid;
+        mail('stephendappah1@gmail.com', 'Empty Uid', $goo, "Stedap Cooperation");
+
+    }
 
     if ($ins || $up) {
         //mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', "", $headers);
@@ -250,9 +261,9 @@ function payment($uid, $ref, $amount)
         if ($fail) {
             $mess = "Fail to update payment for " . $fail . " ID: " . "$uid";
 
-            mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', $mess, "Stedap Cooperation");
+            mail('stephendappah1@gmail.com', 'Payment Update Failed', $mess, "Stedap Cooperation");
         }else{
-            mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', "Failed to update payment", "Stedap Cooperation");
+            mail('stephendappah1@gmail.com', 'Payment Update Failed', "Failed to update payment", "Stedap Cooperation");
         }
     }
 }
