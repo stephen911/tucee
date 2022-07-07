@@ -13,6 +13,7 @@ $user = users();
 
 // // Yolk mailer
 // $mail = new Mail();
+//init
 ?>
 
 <!DOCTYPE html>
