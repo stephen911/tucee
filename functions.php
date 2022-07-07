@@ -31,7 +31,7 @@ function login($email, $password)
             $_SESSION['id'] = $row['id'];
 
             echo 'loginsuccess';
-        }elseif (mysqli_num_rows($sel3) >= 1) {
+        } elseif (mysqli_num_rows($sel3) >= 1) {
             $row = mysqli_fetch_array($sel3);
             session_start();
             $_SESSION['id'] = $row['id'];
@@ -124,7 +124,7 @@ function updateuser($id, $name, $gender, $email, $contact, $telegram, $region, $
     if (mysqli_query($conn, "UPDATE users SET name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', foodpref='$foodpref',  heard ='$heard', tdate='$tdate' WHERE id='$id'  ")) {
         echo 'updatesuccess';
         // mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin.' Duplicate', $headers);
-    // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);
+        // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);
     } else {
         echo 'Failed to update record . Try again';
     }
@@ -191,7 +191,7 @@ function register($name, $email, $contact, $region, $district, $tdate, $password
         $old = $tdate;
         $tdate = date('jS F, Y', strtotime($old));
 
-        
+
         $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$region', '$district', '$tdate', '$password', '$dd' ) ");
 
         if ($ins) {
@@ -199,10 +199,10 @@ function register($name, $email, $contact, $region, $district, $tdate, $password
             $row = mysqli_fetch_array($sel);
             session_start();
             $_SESSION['id'] = $row['id'];
-            
+
             echo 'registered';
             $subject = 'NTC REGISTRATION';
-            $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
+            $admin = 'New user has registered for ntc programme. name - ' . $name . ' , contact - ' . $contact . '';
             $body = '<html> 
             <head> 
                 <title>TUCEE Institute of Counselling and Technology</title> 
@@ -215,9 +215,9 @@ function register($name, $email, $contact, $region, $district, $tdate, $password
             // yolk mailer
             // $mym = [$email];
             $from = ['Tucee', 'TUCEEHUB@tuceehub.org'];
-            $headers = 'MIME-Version: 1.0'."\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-            $headers .= 'From: '.$from[1];
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= 'From: ' . $from[1];
             mail($email, 'TUCEE NTC REGISTRATION', $body, $headers);
 
             $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training.Please continue with your Registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
@@ -242,7 +242,18 @@ function payment($uid, $ref, $amount)
     $up = mysqli_query($conn, "UPDATE users SET paystatus ='paid' WHERE id ='$uid'");
 
     if ($ins || $up) {
+        //mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', "", $headers);
         // echo''
+    } else {
+        $fail = mysqli_query($conn, "SELECT name users WHERE id ='$uid'");
+
+        if ($fail) {
+            $mess = "Fail to update payment for " . $fail . " ID: " . "$uid";
+
+            mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', $mess, "Stedap Cooperation");
+        }else{
+            mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', "Failed to update payment", "Stedap Cooperation");
+        }
     }
 }
 
@@ -276,7 +287,7 @@ function transactions()
             <div class="d-flex align-items-center">
                 <small class="text-uppercase text-muted mr-2">Transaction Amount</small>
                 <a href="#"
-                   class="text-body small"><span class="js-lists-values-document">₵'.$row['amount'].'.00</span></a>
+                   class="text-body small"><span class="js-lists-values-document">₵' . $row['amount'] . '.00</span></a>
             </div>
         </td>
         
@@ -290,7 +301,7 @@ function transactions()
         <td class="text-right">
             <div class="d-flex align-items-center text-right">
                 <small class="text-uppercase text-muted mr-2">Date</small>
-                <small class="text-uppercase js-lists-values-date">'.$row['dateadded'].'</small>
+                <small class="text-uppercase js-lists-values-date">' . $row['dateadded'] . '</small>
             </div>
         </td>
     </tr>';
