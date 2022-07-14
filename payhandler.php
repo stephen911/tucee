@@ -26,5 +26,5 @@ if (isset($_GET['ref'])) {
     $admin = 'User '.$user['name'].' -'.$user['contact'].' - Has paid NTC registration fees ';
     $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
     //payment($uid, $ref, $amount);
-    echo  '<script>window.location="payment.php"</script>';
+    echo  '<script>window.location="ticket.php"</script>';
 }

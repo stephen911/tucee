@@ -308,7 +308,6 @@ $(function () {
     $.ajax(staff);
   });
 
-
   // $(".enrolluser").submit(function (e) {
   //   e.preventDefault();
   //   // before();
@@ -325,7 +324,6 @@ $(function () {
   //   };
   //   $.ajax(staff);
   // });
-
 
   $(document).on("click", ".enrolluser", function (e) {
     e.preventDefault();
@@ -364,7 +362,6 @@ $(function () {
     });
   });
 
-
   // change password
 
   $(".changepass").submit(function (e) {
@@ -402,7 +399,4 @@ $(function () {
     };
     $.ajax(staff);
   });
-
-  
-
 });

@@ -255,6 +255,8 @@ $user = users();
                                                     <div class="col-md-9">
                                                         <div role="group" class="input-group input-group-merge">
                                                             <input id="email" type="email" placeholder="Your email address" value="<?php echo ($user['email'] == '') ? '' : $user['email']; ?>" class="form-control form-control-prepended" name="email">
+                                                            <input id="email" type="hidden" placeholder="Name to be shown on Certificate" value="<?php echo  $user['id']; ?>" class="form-control" name="id">
+
                                                             <div class="input-group-prepend">
                                                                 <div class="input-group-text">
                                                                     <i class="material-icons">email</i>

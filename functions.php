@@ -98,7 +98,7 @@ function enrolluser($id, $enroll)
     }
 }
 
-function updateuser($id, $name, $gender, $email, $contact, $telegram, $region, $district, $foodpref, $tdate)
+function updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $foodpref, $tdate)
 {
     // include 'mail.php';
 
@@ -121,7 +121,7 @@ function updateuser($id, $name, $gender, $email, $contact, $telegram, $region, $
     // $gg = mysqli_query($conn, "SELECT * FROM users WHERE id = '$id'");
     // $rg = mysqli_fetch_array($gg);
     // $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
-    if (mysqli_query($conn, "UPDATE users SET name= '$name', gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', foodpref='$foodpref', tdate='$tdate' WHERE id='$id'  ")) {
+    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', foodpref='$foodpref', tdate='$tdate' WHERE id='$id'  ")) {
         echo 'updatesuccess';
         // mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin.' Duplicate', $headers);
         // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);
@@ -254,7 +254,7 @@ function payment($uid, $ref, $amount)
 
     if ($ins || $up) {
         //mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', "", $headers);
-        // echo''
+        echo 'donepay';
     } else {
         $fail = mysqli_query($conn, "SELECT name users WHERE id ='$uid'");
 
