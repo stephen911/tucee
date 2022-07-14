@@ -90,7 +90,7 @@ $user = users();
                                     ?>
 
 <?php
-                                    if ($user['quiz'] == 'Show') {
+                                    if ($user['quiz'] == 'Sho') {
                                         echo '<li class="breadcrumb-item"><a href="quiz.php">Take Quiz</a></li>';
                                     } else {
                                         echo '<!--<a class="btn btn-sm btn-success"

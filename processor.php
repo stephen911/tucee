@@ -19,6 +19,14 @@ require 'functions.php';
             
 
             break;
+        
+        case 'ticket':
+            extract($_POST);
+            // extract($_POST);
+            confirmuser($id, $confirmation);
+            
+
+            break;
 
         case 'enrolluser':
             extract($_POST);

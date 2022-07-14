@@ -70,6 +70,11 @@ $user = users();
                                 <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">credit_card</i> Payment
                             </a>
                         </li>
+                        <li class="sidebar-menu-item active">
+                            <a class="sidebar-menu-button" href="ticket.php">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">credit_card</i> Ticket
+                            </a>
+                        </li>
                         <?php
                         if ($user['quiz'] == 'Sho') {
                             echo '<li class="sidebar-menu-item active">
