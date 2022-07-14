@@ -171,7 +171,7 @@ if (isset($_GET['ref'])) {
         <!-- <a href="#" id="download-btn" download>Download</a> -->
         
             
-            <input id="name" type='hidden' value="<?php echo $user['title'].' '.$user['name']; ?>">
+            <input id="name" type='hidden' value="<?php echo $user['name']; ?>">
             <input id="district" type='hidden' value="<?php echo $user['district']; ?>">
             <input id="dateadded" type='hidden' value="<?php echo $user['tdate']; ?>">
 

@@ -368,7 +368,7 @@
                                                             <option value="waakye">Waakye with chicken</option>
                                                             <option value="jollof">Jollof with chicken</option>
                                                             <option value="rice">plain rice with chicken</option>
-                                                            <option value="kenkey">Ga-kenkey with Sardine</option>
+                                                            <option value="kenkey">Jollof with Fish</option>
                                                             
 
                                                         </select>

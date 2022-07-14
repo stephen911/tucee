@@ -71,7 +71,7 @@ $user = users();
                             </a>
                         </li>
                         <?php
-                        if ($user['quiz'] == 'Show') {
+                        if ($user['quiz'] == 'Sho') {
                             echo '<li class="sidebar-menu-item active">
                                         <a class="sidebar-menu-button" href="quiz.php">
                                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Quiz

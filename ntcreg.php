@@ -958,7 +958,7 @@ $user = users();
                                                             <!-- <option value="Waakye with chicken">Waakye with chicken</option> -->
                                                             <option value="Jollof with chicken">Jollof with chicken</option>
                                                             <!-- <option value="plain rice with chicken">plain rice with chicken</option> -->
-                                                            <option value="Ga-kenkey with Sardine">Ga-kenkey with Sardine</option>
+                                                            <option value="Jollof with Fish">Jollof with Fish</option>
 
 
                                                         </select>
@@ -966,13 +966,13 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list-group-item">
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-heard">
                                                 <div class="form-row">
                                                     <label id="label-heard" for="heard" class="col-md-3 col-form-label form-label">How did you hear/know of this training</label>
                                                     <div class="col-md-9">
                                                         <select required="required" id="custom-select2" class="form-control custom-select" name="heard">
-                                                            <option selected value="<?php echo ($user['heard'] == '') ? 'How did you hear/know of this training' : $user['heard']; ?>"><?php echo ($user['heard'] == 'select how you heard about this training') ? '' : $user['heard']; ?>
+                                                            <option selected value="</?php echo ($user['heard'] == '') ? 'How did you hear/know of this training' : $user['heard']; ?>"><?php echo ($user['heard'] == 'select how you heard about this training') ? '' : $user['heard']; ?>
                                                             </option>
                                                             <option value="TUCEE Website">TUCEE Website</option>
                                                             <option value="GNACC Website">GNACC Website</option>
@@ -982,14 +982,14 @@ $user = users();
                                                             <option value="Instagram">Instagram</option>
                                                             <option value="Friend">Friend</option>
                                                             <option value="Radio">Radio</option>
-                                                            <!-- <option value="Other">other</option> -->
+                                                             <option value="Other">other</option> 
 
 
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                        
 
