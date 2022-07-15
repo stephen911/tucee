@@ -684,7 +684,7 @@
                                                     </option>
                                                     <option value="AOWIN DISTRICT">AOWIN DISTRICT</option>
                                                     <option value="BIA EAST DISTRICT">BIA EAST DISTRICT</option>
-                                                    <option value="BIA WEST DISTRICT">BIA WEST DISTRICT</option>
+                                                    <option value="BIA WEST DISTRICT" disabled="disabled">BIA WEST DISTRICT</option>
                                                     <option value="BIBIANI-ANHWIASO-BEKWAI DISTRICT">BIBIANI-ANHWIASO-BEKWAI DISTRICT</option>
                                                     <option value="BODI DISTRICT">BODI DISTRICT</option>
                                                     <option value="JUABOSO DISTRICT">JUABOSO DISTRICT</option>
