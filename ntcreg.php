@@ -217,18 +217,18 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div> -->
-                                        <div class="list-group-item">
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-certname">
                                                 <div class="form-row">
                                                     <label id="label-certname" for="certname" class="col-md-3 col-form-label form-label">Name on Certificate</label>
                                                     <div class="col-md-9">
-                                                        <input id="certname" type="text" placeholder="Name to be shown on Certificate" value="<?php echo ($user['name'] == '') ? '' : $user['name']; ?>" class="form-control" name="name">
+                                                        <input id="certname" type="text" placeholder="Name to be shown on Certificate" value="</?php echo ($user['name'] == '') ? '' : $user['name']; ?>" class="form-control" name="name">
 
-                                                        <input id="certname" type="hidden" placeholder="Name to be shown on Certificate" value="<?php echo  $user['id']; ?>" class="form-control" name="id">
+                                                        <input id="certname" type="hidden" placeholder="Name to be shown on Certificate" value="</?php echo  $user['id']; ?>" class="form-control" name="id">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-status">
                                                 <div class="form-row">
