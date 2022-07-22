@@ -98,7 +98,7 @@ function enrolluser($id, $enroll)
     }
 }
 
-function updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $foodpref, $tdate)
+function updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $tdate)
 {
     // include 'mail.php';
 
@@ -121,7 +121,7 @@ function updateuser($id, $gender, $email, $contact, $telegram, $region, $distric
     // $gg = mysqli_query($conn, "SELECT * FROM users WHERE id = '$id'");
     // $rg = mysqli_fetch_array($gg);
     // $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
-    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', foodpref='$foodpref', tdate='$tdate' WHERE id='$id'  ")) {
+    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', tdate='$tdate' WHERE id='$id'  ")) {
         echo 'updatesuccess';
         // mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin.' Duplicate', $headers);
         // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);
@@ -220,13 +220,13 @@ function register($name, $email, $contact, $region, $district, $tdate, $password
             $headers .= 'From: ' . $from[1];
             mail($email, 'TUCEE NTC REGISTRATION', $body, $headers);
 
-            $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training.Please continue with your Registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
+            // $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training.Please continue with your Registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
 
             // $sel = mysqli_query($conn, "SELECT * FROM users WHERE id = '$uid'");
             // $row = mysqli_fetch_array($sel);
 
-            $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
-            mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', $admin, $headers);
+            // $sms->sms('Tucee hub', '0208496496,0244996991', $admin);
+            // mail('stephendappah1@gmail.com', 'TUCEE NTC REGISTRATION', $admin, $headers);
         } else {
             echo 'Registeration failed';
         }

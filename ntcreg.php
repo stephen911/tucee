@@ -949,17 +949,17 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list-group-item">
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-foodpref">
                                                 <div class="form-row">
                                                     <label id="label-foodpref" for="foodpref" class="col-md-3 col-form-label form-label">Food Preference</label>
                                                     <div class="col-md-9">
                                                         <select id="custom-select2" class="form-control custom-select" name="foodpref">
-                                                            <option required="required" selected value="<?php echo ($user['foodpref'] == '') ? '' : $user['foodpref']; ?>"> <?php echo ($user['foodpref'] == '') ? 'Choose food Preference ' : $user['foodpref']; ?>
+                                                            <option required="required" selected value="</?php echo ($user['foodpref'] == '') ? '' : $user['foodpref']; ?>"> </?php echo ($user['foodpref'] == '') ? 'Choose food Preference ' : $user['foodpref']; ?>
                                                             </option>
-                                                            <!-- <option value="Waakye with chicken">Waakye with chicken</option> -->
+                                                            <option value="Waakye with chicken">Waakye with chicken</option> 
                                                             <option value="Jollof with chicken">Jollof with chicken</option>
-                                                            <!-- <option value="plain rice with chicken">plain rice with chicken</option> -->
+                                                            <option value="plain rice with chicken">plain rice with chicken</option> 
                                                             <option value="Jollof with Fish">Jollof with Fish</option>
 
 
@@ -967,7 +967,7 @@ $user = users();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-heard">
                                                 <div class="form-row">

@@ -8,7 +8,7 @@ require 'functions.php';
             extract($_POST);
             // extract($_POST);
             
-            updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $foodpref, $tdate);
+            updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $tdate);
 
             break;
         
