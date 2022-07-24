@@ -114,6 +114,18 @@ $user = users();
                                                             href="certification.php"> View Certificate</a>-->';
                         }
                         ?>
+                        <?php
+                        if ($user['quiz'] == 'Show') {
+                            echo '<li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button" href="trainingHistory.php">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Training History
+                                        </a>
+                                    </li> ';
+                        } else {
+                            echo '<!--<a class="btn btn-sm btn-success"
+                                                            href="certification.php"> View Certificate</a>-->';
+                        }
+                        ?>
 
 
 
