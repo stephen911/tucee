@@ -3,7 +3,7 @@
 <html lang="en"
       dir="ltr">
 
-    
+    //Nice
 <!-- Mirrored from learnplus.demo.frontendmatter.com/student-account-edit-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 May 2022 13:24:33 GMT -->
 <head>
         <meta charset="utf-8">
@@ -21,7 +21,7 @@
 
         <!-- Custom Fonts -->
 //nicely done great fun yet
-//Fine hat cook fire fiod boy
+//Fine hat cook fire fiod boy fresh
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap"
               rel="stylesheet">
 
