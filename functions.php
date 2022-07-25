@@ -98,7 +98,7 @@ function enrolluser($id, $enroll)
     }
 }
 
-function updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $tdate)
+function updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnumber, $ntcemail, $region, $district, $tdate)
 {
     // include 'mail.php';
 
@@ -121,7 +121,7 @@ function updateuser($id, $gender, $email, $contact, $telegram, $region, $distric
     // $gg = mysqli_query($conn, "SELECT * FROM users WHERE id = '$id'");
     // $rg = mysqli_fetch_array($gg);
     // $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
-    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', region ='$region', district ='$district', tdate='$tdate' WHERE id='$id'  ")) {
+    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed='$lincesed', regnumber='$regnumber', ntcemail='$ntcemail', region='$region', district='$district', tdate='$tdate'  WHERE id='$id'  ")) {
         echo 'updatesuccess';
         // mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin.' Duplicate', $headers);
         // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);
@@ -174,7 +174,7 @@ function updateuser($id, $gender, $email, $contact, $telegram, $region, $distric
     // }
 }
 
-function register($name, $email, $contact, $region, $district, $tdate, $password)
+function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $region, $district, $tdate, $password)
 {
     $password = md5($password);
     include 'starter.php';
@@ -192,7 +192,7 @@ function register($name, $email, $contact, $region, $district, $tdate, $password
         $tdate = date('jS F, Y', strtotime($old));
 
 
-        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$region', '$district', '$tdate', '$password', '$dd' ) ");
+        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,lincesed,regnumber,ntcemail,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$lincesed','$regnumber','$ntcemail','$region', '$district', '$tdate', '$password', '$dd' ) ");
 
         if ($ins) {
             $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password='$password'");

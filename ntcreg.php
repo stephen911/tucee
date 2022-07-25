@@ -288,16 +288,36 @@ $user = users();
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="list-group-item">
+                                        <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-lastname">
                                                 <div class="form-row">
                                                     <label id="label-lastname" for="lastname" class="col-md-3 col-form-label form-label">National teachers council license number</label>
                                                     <div class="col-md-9">
-                                                        <input id="lastname" type="text" placeholder="No. should be like PT/000660/2022" value="</?php echo ($user['lincesed'] == '') ? '' : $user['lincesed']; ?>" class="form-control" name="lincesed">
+                                                        <input id="lastname" type="text" placeholder="No. should be like PT/000660/2022" value="<?php echo ($user['lincesed'] == '') ? '' : $user['lincesed']; ?>" class="form-control" name="lincesed">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> -->
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group m-0" role="group" aria-labelledby="label-telegram">
+                                                <div class="form-row">
+                                                    <label id="label-telegram" for="regnumber" class="col-md-3 col-form-label form-label">Registered Number</label>
+                                                    <div class="col-md-9">
+                                                        <input id="regnumber" type="text" placeholder="Registered Number" value="<?php echo ($user['regnumber'] == '') ? '' : $user['regnumber']; ?>" class="form-control" name="regnumber">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group m-0" role="group" aria-labelledby="label-telegram">
+                                                <div class="form-row">
+                                                    <label id="label-telegram" for="ntcemail" class="col-md-3 col-form-label form-label">NTC Email</label>
+                                                    <div class="col-md-9">
+                                                        <input id="ntcemail" type="email" placeholder="NTC Email" value="<?php echo ($user['ntcemail'] == '') ? '' : $user['ntcemail']; ?>" class="form-control" name="ntcemail">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-schname">
                                                 <div class="form-row">

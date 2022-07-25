@@ -123,6 +123,41 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label id="label-lastname" for="lastname" class="form-label">NTC license No.</label>
+                            <div class="input-group input-group-merge">
+                                <input id="lincesed" type="text" placeholder="No. should be like PT/000660/2022" class="form-control" name="lincesed">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="far fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="label-lastname" for="lastname" class="form-label">Registered Number</label>
+                            <div class="input-group input-group-merge">
+                                <input id="regnumber" type="text" placeholder="Registered Number" class="form-control" name="regnumber">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="far fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="label-lastname" for="lastname" class="form-label">NTC Email</label>
+                            <div class="input-group input-group-merge">
+                                <input id="ntcemail" type="email" placeholder="NTC Email" class="form-control" name="ntcemail">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="far fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="list-group-item">
                             <div class="form-group m-0" role="group" aria-labelledby="label-region">
                                 <div class="form-row">

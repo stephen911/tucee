@@ -8,7 +8,7 @@ require 'functions.php';
             extract($_POST);
             // extract($_POST);
             
-            updateuser($id, $gender, $email, $contact, $telegram, $region, $district, $tdate);
+            updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnumber, $ntcemail, $region, $district, $tdate);
 
             break;
         
@@ -53,7 +53,7 @@ require 'functions.php';
                 } elseif ($fname == '' || $lname == '' || $contact == '' || $region == '' || $district == '' || $tdate == '' || $email == '' || $password == '') {
                     echo ' All field must be filled';
                 } else {
-                    register($name, $email, $contact, $region, $district, $tdate, $password);
+                    register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $region, $district, $tdate, $password);
                 }
 
             break;
