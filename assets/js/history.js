@@ -58,7 +58,7 @@ image.onload = function () {
   // drawText(districtInput.value.toUpperCase(), 1250, 2050, 40,'monotype arial');
   drawText(dateInput.value.toUpperCase(), 1945, 2070, 65, "monotype arial");
   drawText(registeredInput.value.toUpperCase(), 1945, 860, 80, "monotype arial");
-  drawText(lincesedInput.value.toUpperCase(), 1945, 1030, 80, "monotype arial");
+  drawText(lincesedInput.value.toUpperCase(), 950, 1150, 80, "monotype arial");
 
   // drawText(dateInput.value.toUpperCase(), 1915, 5300, 60,'monotype arial');
 };
