@@ -226,7 +226,7 @@
                                                     <option value="ACCRA METROPOLITAN">ACCRA METROPOLITAN</option>
                                                     <option value="ADA EAST DISTRICT">ADA EAST DISTRICT</option>
                                                     <option value="ADA WEST DISTRICT">ADA WEST DISTRICT</option>
-                                                    <option value="ADENTAN MUNICIPAL">ADENTAN MUNICIPAL</option>
+                                                    <option value="ADENTAN MUNICIPAL" disabled="disabled">ADENTAN MUNICIPAL</option>
                                                     <option value="ASHAIMAN MUNICIPAL">ASHAIMAN MUNICIPAL</option>
                                                     <option value="AYAWASO CENTRAL MUNICIPAL">AYAWASO CENTRAL MUNICIPAL</option>
                                                     <option value="AYAWASO EAST MUNICIPAL">AYAWASO EAST MUNICIPAL</option>
