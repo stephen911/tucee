@@ -159,6 +159,9 @@ if (isset($_GET['ref'])) {
 
                             <input id="name" type='hidden' value="<?php echo $user['name']; ?>">
                             <input id="district" type='hidden' value="<?php echo $user['district']; ?>">
+                            <input id="regnumber" type='hidden' value="<?php echo $user['regnumber']; ?>">
+                            <input id="lincesed" type='hidden' value="<?php echo $user['lincesed']; ?>">
+
                             <input id="dateadded" type='hidden' value="<?php echo $user['tdate']; ?>">
 
                             <!-- <a href="javascript:genPDF()">Download PDF</a> -->

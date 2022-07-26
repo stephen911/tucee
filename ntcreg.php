@@ -122,7 +122,7 @@ $user = users();
 
                                         <form action="" method="POST" class="cfuser">
                                             <input id="" type="hidden" name="confirmation" value="confirmed">
-                                            <input id="cfuser" type="hidden" placeholder="" value="'.$user['id'].'" class="form-control" name="id">
+                                            <input id="cfuser" type="hidden" placeholder="" value="' . $user['id'] . '" class="form-control" name="id">
 
                                             <div class="page-nav__content" >
                                                 <button type="submit" class="btn btn-success">Confirm Participation</button>
@@ -147,10 +147,10 @@ $user = users();
                             }
                             ?>
 
-                            
 
-                            
-                            
+
+
+
                             <?php
                             if ($user['paystatus'] == 'paid') {
                                 echo '<div class="card border-left-3 border-left-primary card-2by1">
@@ -191,7 +191,7 @@ $user = users();
                                         </div> -->
 
 
-                            
+
                             <h1 class="h2">NTC CPD Training</h1>
                             <form action="" method="POST" class="updateuser">
                                 <div class="card">
@@ -309,6 +309,23 @@ $user = users();
                                             </div>
                                         </div>
                                         <div class="list-group-item">
+                                            <div class="form-group m-0" role="group" aria-labelledby="label-foodpref">
+                                                <div class="form-row">
+                                                    <label id="label-foodpref" for="ntcemail" class="col-md-3 col-form-label form-label">Are you registed with NTC?</label>
+                                                    <div class="col-md-9">
+                                                        <select id="custom-select2" class="form-control custom-select" name="ntcemail">
+                                                            <option selected value="<?php echo ($user['ntcemail'] == '') ? '' : $user['ntcemail']; ?>"><?php echo ($user['ntcemail'] == '') ? 'Are you registed with NTC?' : $user['ntcemail']; ?></option>
+                                                            <option value="Yes">Yes</option>
+                                                            <option value="No">No</option>
+
+
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-telegram">
                                                 <div class="form-row">
                                                     <label id="label-telegram" for="ntcemail" class="col-md-3 col-form-label form-label">NTC Email</label>
@@ -317,7 +334,7 @@ $user = users();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="list-group-item">
                                             <div class="form-group m-0" role="group" aria-labelledby="label-schname">
                                                 <div class="form-row">
@@ -417,7 +434,7 @@ $user = users();
                                                                     <option value="AYAWASO NORTH MUNICIPAL">AYAWASO NORTH MUNICIPAL</option>
                                                                     <option value="AYAWASO WEST MUNICIPAL">AYAWASO WEST MUNICIPAL</option>
                                                                     <option value="GA CENTRAL MUNICIPAL">GA CENTRAL MUNICIPAL</option>
-                                                                    <option value="GA EAST MUNICIPAL" disabled= "disabled">GA EAST MUNICIPAL</option>
+                                                                    <option value="GA EAST MUNICIPAL" disabled="disabled">GA EAST MUNICIPAL</option>
                                                                     <option value="GA NORTH MUNICIPAL">GA NORTH MUNICIPAL</option>
                                                                     <option value="GA SOUTH MUNICIPAL">GA SOUTH MUNICIPAL</option>
                                                                     <option value="GA WEST MUNICIPAL">GA WEST MUNICIPAL</option>
@@ -1013,7 +1030,7 @@ $user = users();
                                             </div>
                                         </div> -->
 
-                                       
+
 
 
 

@@ -145,13 +145,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label id="label-lastname" for="lastname" class="form-label">NTC Email</label>
                             <div class="input-group input-group-merge">
                                 <input id="ntcemail" type="email" placeholder="NTC Email" class="form-control" name="ntcemail">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
                                         <span class="far fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="list-group-item">
+                            <div class="form-group m-0" role="group" aria-labelledby="label-foodpref">
+                                <div class="form-row">
+                                    <label id="label-foodpref" for="ntcemail" class="col-md-3 col-form-label form-label">Are you registed with NTC?</label>
+                                    <div class="col-md-9">
+                                        <select id="custom-select2" class="form-control custom-select" name="ntcemail">
+                                            
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            
+
+
+                                        </select>
                                     </div>
                                 </div>
                             </div>
