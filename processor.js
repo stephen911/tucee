@@ -169,6 +169,32 @@ $(function () {
       }).then(function (result) {
         window.location.reload();
       });
+    } else if (response == "yes") {
+      swal({
+        title: "Congratulations!",
+        html: "Thank you for your Participation. <br><b>You can enroll in our certificate in counselling programme. Enroll now to get discount</b>",
+        timer: 4000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
+    } else if (response == "no") {
+      swal({
+        title: "Thank You!",
+        html: " <b>for your response. Our team is working on it. <br><b>Check again in 24 hours.</b>",
+        timer: 4000,
+        type: "success",
+        padding: "2em",
+        onOpen: function () {
+          swal.showLoading();
+        },
+      }).then(function (result) {
+        window.location.reload();
+      });
     } else if (response == "enrolled") {
       swal({
         title: "Congratulations!",

@@ -78,12 +78,30 @@ function confirmuser($id, $confirmation)
 {
     include 'starter.php';
     // $id = $_SESSION['id'];
-    $conf = mysqli_query($conn, "UPDATE users SET confirm ='$confirmation' WHERE id='$id'  ");
-    if ($conf) {
-        echo 'confirmed';
-    } else {
-        echo 'Failed to update record . Try again';
+    if ($confirmation == "No"){
+        
+        $conf = mysqli_query($conn, "UPDATE users SET confirm ='$confirmation' WHERE id='$id'  ");
+        if ($conf) {
+            echo 'no';
+        } else {
+            echo 'Failed to update record . Try again';
+        }
+
+    }else{
+        $conf = mysqli_query($conn, "UPDATE users SET confirm ='$confirmation' WHERE id='$id'  ");
+        if ($conf) {
+            echo 'yes';
+        } else {
+            echo 'Failed to update record . Try again';
+        }
+
     }
+
+    // if ($conf) {
+    //     echo 'confirmed';
+    // } else {
+    //     echo 'Failed to update record . Try again';
+    // }
 }
 
 function enrolluser($id, $enroll)

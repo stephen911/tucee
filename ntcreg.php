@@ -110,41 +110,89 @@ $user = users();
                                 </div>
                             </div>
                             <?php
-                            if ($user['confirm'] == '') {
-                                echo '<div class="card border-left-3 border-left-danger card-2by1">
-                                <div class="card-body">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            Please Confirm your Participation
-
-                                        </div>
-                                        </form>
-
-                                        <form action="" method="POST" class="cfuser">
-                                            <input id="" type="hidden" name="confirmation" value="confirmed">
-                                            <input id="cfuser" type="hidden" placeholder="" value="' . $user['id'] . '" class="form-control" name="id">
-
-                                            <div class="page-nav__content" >
-                                                <button type="submit" class="btn btn-success">Confirm Participation</button>
+                            if ($user['creditconfirm'] == 'Show' && $user['confirm'] == 'Yes') {
+                                echo '<div class="card border-left-3 border-left-primary card-2by1">
+                                    <div class="card-body">
+                                        <div class="media flex-wrap align-items-center">
+                                            <div class="media-left">
+                                                <i class="material-icons text-muted-light">credit_card</i>
                                             </div>
-                                        </form>
-
+                                            <div class="media-body"
+                                                 style="min-width: 180px">
+                                                 <small>Thank you for your Participation. <br><b>You can enroll in our certificate in counselling programme. Enroll now to get discount </b></small>
+                                            </div>
+                                            <div class="media-right">
+                                            <a href="certCouns.php" 
+                                               class="btn btn-success float-right">Enroll</a>
+                                        </div>
+                                            
+                                            
+                                        </div>
                                     </div>
-                                </div>
-                            </div>';
+                                </div>';
+                            } 
+                            
+                            elseif ($user['creditconfirm'] == 'Hide') {
+                                echo "";
                             } else {
                                 echo '<div class="card border-left-3 border-left-danger card-2by1">
                                 <div class="card-body">
                                     <div class="media align-items-center">
                                         <div class="media-body">
-                                            You have  <span style="color: green;">Confirmed</span> your Participation.
+                                            Has NTC Credited your points?
+
                                         </div>
-                                        
+                                        </form>
+
+                                        <form action="" method="POST" class="cfuser">
+                                            <input id="" type="hidden" name="confirmation" value="Yes">
+                                            <input id="cfuser" type="hidden" placeholder="" value="' . $user['id'] . '" class="form-control" name="id">
+
+                                            <div class="page-nav__content" >
+                                                <button type="submit" class="btn btn-success">Yes</button>
+                                            </div>
+                                            
+                                        </form>
+                                        <div>&nbsp&nbsp &nbsp &nbsp &nbsp  </div>
+                                        <form action="" method="POST" class="cfuser">
+                                            <input id="" type="hidden" name="confirmation" value="No">
+                                            <input id="cfuser" type="hidden" placeholder="" value="' . $user['id'] . '" class="form-control" name="id">
+
+                                            <div class="page-nav__content" >
+                                                <button type="submit" class="btn btn-success">No</button>
+                                            </div>
+                                            
+                                        </form>
 
                                     </div>
                                 </div>
                             </div>';
+                                
                             }
+                            ?>
+
+                            <?php
+                            if ($user['creditconfirm'] == 'Show' && $user['confirm'] == 'No'){
+
+                                echo '<div class="card border-left-3 border-left-primary card-2by1">
+                                    <div class="card-body">
+                                        <div class="media flex-wrap align-items-center">
+                                            <div class="media-left">
+                                                <i class="material-icons text-muted-light">credit_card</i>
+                                            </div>
+                                            <div class="media-body"
+                                                 style="min-width: 180px">
+                                                 <small>Thank you for your response. Our team is working on it. <br><b>Check again in 24 hours.</b></small>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>';
+
+                            }
+                            
                             ?>
 
 
@@ -161,7 +209,7 @@ $user = users();
                                         </div>
                                         <div class="media-body"
                                              style="min-width: 180px">
-                                             <small><b>Congratulations, you are duly registered for the Counselling training. Please Continue Your Resgistration here. Call +233541369429 for any assistance. Thanks</b></small>
+                                             <small><b>Congratulations, you are duly registered for the Counselling training. Please Continue fill your NTC CPD Training forms. Call +233541369429 for any assistance. Thanks</b></small>
                                         </div>
                                         
                                         
@@ -314,12 +362,10 @@ $user = users();
                                                     <label id="label-foodpref" for="ntcemail" class="col-md-3 col-form-label form-label">Are you registed with NTC?</label>
                                                     <div class="col-md-9">
                                                         <select id="custom-select2" class="form-control custom-select" name="ntcemail">
-                                                            <option selected value="<?php echo ($user['ntcemail'] == '') ? '' : $user['ntcemail']; ?>"><?php echo ($user['ntcemail'] == '') ? 'Are you registed with NTC?' : $user['ntcemail']; ?></option>
+                                                            <option selected value="<?php echo ($user['ntcemail'] == '') ? 'Are you registed with NTC?' : $user['ntcemail']; ?>"><?php echo ($user['ntcemail'] == '') ? 'Are you registed with NTC?' : $user['ntcemail']; ?></option>
+                                                            <!-- <option value=""></option> -->
                                                             <option value="Yes">Yes</option>
                                                             <option value="No">No</option>
-
-
-
                                                         </select>
                                                     </div>
                                                 </div>
@@ -330,7 +376,7 @@ $user = users();
                                                 <div class="form-row">
                                                     <label id="label-telegram" for="ntcemail" class="col-md-3 col-form-label form-label">NTC Email</label>
                                                     <div class="col-md-9">
-                                                        <input id="ntcemail" type="email" placeholder="NTC Email" value="<?php echo ($user['ntcemail'] == '') ? '' : $user['ntcemail']; ?>" class="form-control" name="ntcemail">
+                                                        <input id="ntcemail" type="email" placeholder="NTC Email" value="</?php echo ($user['ntcemail'] == '') ? '' : $user['ntcemail']; ?>" class="form-control" name="ntcemail">
                                                     </div>
                                                 </div>
                                             </div>

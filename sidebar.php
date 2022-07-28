@@ -194,7 +194,7 @@ $user = users();
                                                 </li> -->
 
                             </ul>
-                            <div class="sidebar-heading">Student</div>
+                            <div class="sidebar-heading">Account Logout</div>
                             <ul class="sidebar-menu sm-active-button-bg">
 
 
