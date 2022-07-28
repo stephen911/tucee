@@ -19,7 +19,7 @@
               content="noindex">
 
         <!-- Custom Fonts -->
-//nicely done great fun yet
+//nicely done great fun yet best
 //Fine hat cook fire fiod boy fresh
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap"
               rel="stylesheet">
