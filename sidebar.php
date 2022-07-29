@@ -115,7 +115,7 @@ $user = users();
                         }
                         ?>
                         <?php
-                        if ($user['quiz'] == 'Show') {
+                        if ($user['creditconfirm'] == 'Show') {
                             echo '<li class="sidebar-menu-item active">
                                         <a class="sidebar-menu-button" href="trainingHistory.php">
                                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Training History
