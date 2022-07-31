@@ -192,7 +192,7 @@ function updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnu
     // }
 }
 
-function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $region, $district, $tdate, $password)
+function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $ntcemailpost, $region, $district, $tdate, $password)
 {
     $password = md5($password);
     include 'starter.php';
@@ -210,7 +210,7 @@ function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $re
         $tdate = date('jS F, Y', strtotime($old));
 
 
-        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,lincesed,regnumber,ntcemail,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$lincesed','$regnumber','$ntcemail','$region', '$district', '$tdate', '$password', '$dd' ) ");
+        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,lincesed,regnumber,ntcemail,ntcemailpost,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$lincesed','$regnumber','$ntcemail','$ntcemailpost','$region','$district','$tdate','$password','$dd' ) ");
 
         if ($ins) {
             $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password='$password'");
@@ -219,24 +219,24 @@ function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $re
             $_SESSION['id'] = $row['id'];
 
             echo 'registered';
-            $subject = 'NTC REGISTRATION';
-            $admin = 'New user has registered for ntc programme. name - ' . $name . ' , contact - ' . $contact . '';
-            $body = '<html> 
-            <head> 
-                <title>TUCEE Institute of Counselling and Technology</title> 
-            </head> 
-            <body> 
-                <h4>Registration Successful</h4> 
-                <b> <span style="color: green;">Congratulations</span>, you are duly registered for the Counselling training. Proceed to make <span style="color: green;">Payment</span> to Confirm your Participation. Call <span style="color: green;">+233(0)54 1369 429</span> for any assistance. Thanks</b>
-            </body> 
-            </html>';
+            // $subject = 'NTC REGISTRATION';
+            // $admin = 'New user has registered for ntc programme. name - ' . $name . ' , contact - ' . $contact . '';
+            // $body = '<html> 
+            // <head> 
+            //     <title>TUCEE Institute of Counselling and Technology</title> 
+            // </head> 
+            // <body> 
+            //     <h4>Registration Successful</h4> 
+            //     <b> <span style="color: green;">Congratulations</span>, you are duly registered for the Counselling training. Proceed to make <span style="color: green;">Payment</span> to Confirm your Participation. Call <span style="color: green;">+233(0)54 1369 429</span> for any assistance. Thanks</b>
+            // </body> 
+            // </html>';
             // yolk mailer
             // $mym = [$email];
-            $from = ['Tucee', 'TUCEEHUB@tuceehub.org'];
-            $headers = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= 'From: ' . $from[1];
-            mail($email, 'TUCEE NTC REGISTRATION', $body, $headers);
+            // $from = ['Tucee', 'TUCEEHUB@tuceehub.org'];
+            // $headers = 'MIME-Version: 1.0' . "\r\n";
+            // $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            // $headers .= 'From: ' . $from[1];
+            // mail($email, 'TUCEE NTC REGISTRATION', $body, $headers);
 
             // $send->sms('Tucee hub', $contact, 'Congratulations, you are duly registered for the Counselling training.Please continue with your Registration. Proceed to make payment  to confirm your participation  Call 0541 369 429 for any assistance. Thanks');
 
