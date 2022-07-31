@@ -117,7 +117,7 @@ if (isset($_GET['ref'])) {
                                         <div class="card-body">
                                             <div class="media align-items-center">
                                                 <div class="media-body">
-                                                    Take your Quiz
+                                                    Evaluate the programme
                                                     <!-- <strong class="text-danger">$25.00</strong> <a href="#">#8331</a> -->
                                                 </div>
                                                 <div class="media-right">

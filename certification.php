@@ -127,10 +127,7 @@ if (isset($_GET['ref'])) {
                                                     <a href="#" id="download-btn"
                                                        class="btn btn-success float-right">Download</a>
                                                 </div>
-                                                <div class="media-right">
-                                                    <a href="ticket.php" 
-                                                       class="btn btn-success float-right">View Ticket</a>
-                                                </div>
+                                                
                                                 
                                             </div>
                                         </div>
