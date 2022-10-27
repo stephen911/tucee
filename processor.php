@@ -53,7 +53,7 @@ require 'functions.php';
                 } elseif ($fname == '' || $lname == '' || $contact == '' || $region == '' || $district == '' || $tdate == '' || $email == '' || $password == '') {
                     echo ' All field must be filled';
                 } else {
-                    register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $ntcemailpost, $region, $district, $tdate, $password);
+                    register($name, $email, $contact, $lincesed, $regnumber, $modality, $ntcemail, $ntcemailpost, $region, $district, $tdate, $password);
                 }
 
             break;

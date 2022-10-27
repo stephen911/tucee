@@ -1,9 +1,5 @@
 <?php
 
-// Developer : Frederick  Ennin
-// Email : kpin463@gmail.com
-// started on Saturday11 June,2022
-// github :https://github.com/dollarstir
 
 function db()
 {
@@ -192,7 +188,7 @@ function updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnu
     // }
 }
 
-function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $ntcemailpost, $region, $district, $tdate, $password)
+function register($name, $email, $contact, $lincesed, $regnumber, $modality, $ntcemail, $ntcemailpost, $region, $district, $tdate, $password)
 {
     $password = md5($password);
     include 'starter.php';
@@ -210,7 +206,7 @@ function register($name, $email, $contact, $lincesed, $regnumber, $ntcemail, $nt
         $tdate = date('jS F, Y', strtotime($old));
 
 
-        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,lincesed,regnumber,ntcemail,ntcemailpost,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$lincesed','$regnumber','$ntcemail','$ntcemailpost','$region','$district','$tdate','$password','$dd' ) ");
+        $ins = mysqli_query($conn, "INSERT INTO users (name,email,contact,lincesed,regnumber,modality,ntcemail,ntcemailpost,region,district,tdate,password,dateadded) VALUES('$name', '$email', '$contact', '$lincesed','$regnumber','$modality','$ntcemail','$ntcemailpost','$region','$district','$tdate','$password','$dd' ) ");
 
         if ($ins) {
             $sel = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password='$password'");

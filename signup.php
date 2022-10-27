@@ -159,6 +159,21 @@
                         <div class="list-group-item">
                             <div class="form-group m-0" role="group" aria-labelledby="label-foodpref">
                                 <div class="form-row">
+                                    <label id="label-foodpref" for="modality" class="col-md-3 col-form-label form-label">Select Workshop Mode</label>
+                                    <div class="col-md-9">
+                                        <select id="custom-select2" class="form-control custom-select" name="modality">
+                                            
+                                            <option value="online">Online</option>
+                                            <option value="physical">Face-to-Face</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="form-group m-0" role="group" aria-labelledby="label-foodpref">
+                                <div class="form-row">
                                     <label id="label-foodpref" for="ntcemail" class="col-md-3 col-form-label form-label">Are you registered with NTC?</label>
                                     <div class="col-md-9">
                                         <select id="custom-select2" class="form-control custom-select" name="ntcemail">
@@ -173,6 +188,7 @@
                                 </div>
                             </div>
                         </div>
+
 
 
                         <div class="list-group-item">
