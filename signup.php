@@ -242,14 +242,14 @@
                                                     <option value="ACCRA METROPOLITAN">ACCRA METROPOLITAN</option>
                                                     <option value="ADA EAST DISTRICT">ADA EAST DISTRICT</option>
                                                     <option value="ADA WEST DISTRICT">ADA WEST DISTRICT</option>
-                                                    <option value="ADENTAN MUNICIPAL" disabled="disabled">ADENTAN MUNICIPAL</option>
+                                                    <option value="ADENTAN MUNICIPAL" >ADENTAN MUNICIPAL</option>
                                                     <option value="ASHAIMAN MUNICIPAL">ASHAIMAN MUNICIPAL</option>
                                                     <option value="AYAWASO CENTRAL MUNICIPAL">AYAWASO CENTRAL MUNICIPAL</option>
                                                     <option value="AYAWASO EAST MUNICIPAL">AYAWASO EAST MUNICIPAL</option>
                                                     <option value="AYAWASO NORTH MUNICIPAL">AYAWASO NORTH MUNICIPAL</option>
                                                     <option value="AYAWASO WEST MUNICIPAL">AYAWASO WEST MUNICIPAL</option>
                                                     <option value="GA CENTRAL MUNICIPAL">GA CENTRAL MUNICIPAL</option>
-                                                    <option value="GA EAST MUNICIPAL" disabled="disabled">GA EAST MUNICIPAL</option>
+                                                    <option value="GA EAST MUNICIPAL" >GA EAST MUNICIPAL</option>
                                                     <option value="GA NORTH MUNICIPAL">GA NORTH MUNICIPAL</option>
                                                     <option value="GA SOUTH MUNICIPAL">GA SOUTH MUNICIPAL</option>
                                                     <option value="GA WEST MUNICIPAL">GA WEST MUNICIPAL</option>
@@ -752,7 +752,9 @@
                                                     </option>
                                                     <option value="AOWIN DISTRICT">AOWIN DISTRICT</option>
                                                     <option value="BIA EAST DISTRICT">BIA EAST DISTRICT</option>
-                                                    <option value="BIA WEST DISTRICT" disabled="disabled">BIA WEST DISTRICT</option>
+                                                    <!-- <option value="BIA WEST DISTRICT" disabled="disabled">BIA WEST DISTRICT</option> -->
+
+                                                    <option value="BIA WEST DISTRICT" >BIA WEST DISTRICT</option>
                                                     <option value="BIBIANI-ANHWIASO-BEKWAI DISTRICT">BIBIANI-ANHWIASO-BEKWAI DISTRICT</option>
                                                     <option value="BODI DISTRICT">BODI DISTRICT</option>
                                                     <option value="JUABOSO DISTRICT">JUABOSO DISTRICT</option>
