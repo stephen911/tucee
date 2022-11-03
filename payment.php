@@ -107,7 +107,7 @@ if (isset($_GET['ref'])) {
                                                 </div>
                                                 <div class="media-right">
                                                     ' . $yolk->handler() . '
-                                                    ' . $yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 25, $ref = '') . '
+                                                    ' . $yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 70, $ref = '') . '
                                                     ' . $yolk->pay("Pay Now") . '
                                                 </div>
                                             </div>
