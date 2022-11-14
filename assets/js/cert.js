@@ -58,7 +58,7 @@ const downloadBtn = document.getElementById('download-btn')
 
 
 const image = new Image()
-image.src = 'assets/images/certificate.png'
+image.src = 'assets/images/ntccertificate.png'
 image.onload = function () {
 	// ctx.imageSmoothingEnabled = false;
 	
@@ -66,9 +66,9 @@ image.onload = function () {
 	// context.imageSmoothingEnabled = false;
 	// drawImage2()
 	drawImage()
-	drawText(nameInput.value.toUpperCase(), 1250, 875, 70,'monotype arial');
-drawText(districtInput.value.toUpperCase(), 1250, 1230, 40,'monotype arial');
-drawText(dateInput.value.toUpperCase(), 1250, 1310, 40,'monotype arial');
+	drawText(nameInput.value.toUpperCase(), 1250, 850, 70,'monotype arial');
+drawText(districtInput.value.toUpperCase(), 1100, 920, 40,'monotype arial');
+drawText(dateInput.value.toUpperCase(), 1285, 1380, 40,'monotype arial');
 
 
 }
