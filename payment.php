@@ -97,7 +97,25 @@ if (isset($_GET['ref'])) {
                             <h1 class="h2">Payment History</h1>
 
                             <?php
-                            if ($user['paystatus'] == '' && $user['modality'] == 'physical') {
+                            if ($user['paystatus'] == '') {
+                                echo '<div class="card border-left-3 border-left-danger card-2by1">
+                                        <div class="card-body">
+                                            <div class="media align-items-center">
+                                                <div class="media-body">
+                                                    No Payment has been made yet
+                                                    
+                                                </div>
+                                                <div class="media-right">
+                                                    ' . $yolk->handler() . '
+                                                    ' . $yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 70, $ref = '') . '
+                                                    ' . $yolk->pay("Pay Now") . '
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>';
+                            }
+
+                            else if ($user['paystatus'] == '' && $user['modality'] == 'physical') {
                                 echo '<div class="card border-left-3 border-left-danger card-2by1">
                                         <div class="card-body">
                                             <div class="media align-items-center">
