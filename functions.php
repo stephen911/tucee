@@ -112,7 +112,7 @@ function enrolluser($id, $enroll)
     }
 }
 
-function updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnumber, $ntcemail, $region, $district, $tdate)
+function updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnumber, $modality, $ntcemail, $region, $district, $tdate)
 {
     // include 'mail.php';
 
@@ -135,7 +135,7 @@ function updateuser($id, $gender, $email, $contact, $telegram, $lincesed, $regnu
     // $gg = mysqli_query($conn, "SELECT * FROM users WHERE id = '$id'");
     // $rg = mysqli_fetch_array($gg);
     // $admin = 'New user has registered for ntc programme. name - '.$name.' , contact - '.$contact.'';
-    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed='$lincesed', regnumber='$regnumber', ntcemail='$ntcemail', region='$region', district='$district', tdate='$tdate'  WHERE id='$id'  ")) {
+    if (mysqli_query($conn, "UPDATE users SET gender = '$gender', email='$email', contact= '$contact', telegram='$telegram', lincesed='$lincesed', regnumber='$regnumber', modality='$modality', ntcemail='$ntcemail', region='$region', district='$district', tdate='$tdate'  WHERE id='$id'  ")) {
         echo 'updatesuccess';
         // mail('stephendappah1@gmail.com', 'TUCEE '.$subject, $admin.' Duplicate', $headers);
         // mail('kpin463@gmail.com', 'TUCEE '.$subject, $admin.'Duplicate', $headers);

@@ -130,9 +130,7 @@ $user = users();
                                         </div>
                                     </div>
                                 </div>';
-                            } 
-                            
-                            elseif ($user['creditconfirm'] == 'Hide') {
+                            } elseif ($user['creditconfirm'] == 'Hide') {
                                 echo "";
                             } else {
                                 echo '<div class="card border-left-3 border-left-danger card-2by1">
@@ -167,12 +165,11 @@ $user = users();
                                     </div>
                                 </div>
                             </div>';
-                                
                             }
                             ?>
 
                             <?php
-                            if ($user['creditconfirm'] == 'Show' && $user['confirm'] == 'No'){
+                            if ($user['creditconfirm'] == 'Show' && $user['confirm'] == 'No') {
 
                                 echo '<div class="card border-left-3 border-left-primary card-2by1">
                                     <div class="card-body">
@@ -190,9 +187,8 @@ $user = users();
                                         </div>
                                     </div>
                                 </div>';
-
                             }
-                            
+
                             ?>
 
 
@@ -352,6 +348,23 @@ $user = users();
                                                     <label id="label-telegram" for="regnumber" class="col-md-3 col-form-label form-label">Registered Number</label>
                                                     <div class="col-md-9">
                                                         <input id="regnumber" type="text" placeholder="Registered Number" value="<?php echo ($user['regnumber'] == '') ? '' : $user['regnumber']; ?>" class="form-control" name="regnumber">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group m-0" role="group" aria-labelledby="label-foodpref">
+                                                <div class="form-row">
+                                                    <label id="label-foodpref" for="modality" class="col-md-3 col-form-label form-label">Select your modality</label>
+                                                    <div class="col-md-9">
+                                                        <select id="custom-select2" class="form-control custom-select" name="modality">
+                                                            <option selected value="<?php echo ($user['modality'] == '') ? 'Select your modality' : $user['modality']; ?>"><?php echo ($user['modality'] == '') ? 'Select your modality' : $user['modality']; ?></option>
+                                                            <!-- <option value=""></option> -->
+                                                            <!-- <option selected value="">Select your modality
+                                                            </option> -->
+                                                            <option value="online">Online</option>
+                                                            <option value="physical">Face-to-Face</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>

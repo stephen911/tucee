@@ -161,8 +161,9 @@
                                 <div class="form-row">
                                     <label id="label-foodpref" for="modality" class="col-md-3 col-form-label form-label">Select Workshop Mode</label>
                                     <div class="col-md-9">
-                                        <select id="custom-select2" class="form-control custom-select" name="modality">
-                                            
+                                        <select required="required" id="custom-select2" class="form-control custom-select" name="modality">
+                                        <option selected value="">Select your modality
+                                            </option>
                                             <option value="online">Online</option>
                                             <option value="physical">Face-to-Face</option>
 
@@ -176,8 +177,9 @@
                                 <div class="form-row">
                                     <label id="label-foodpref" for="ntcemail" class="col-md-3 col-form-label form-label">Are you registered with NTC?</label>
                                     <div class="col-md-9">
-                                        <select id="custom-select2" class="form-control custom-select" name="ntcemail">
-                                            
+                                        <select required="required" id="custom-select2" class="form-control custom-select" name="ntcemail">
+                                        <option selected value="">Are you registered with NTC?
+                                            </option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
                                             
