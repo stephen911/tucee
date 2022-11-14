@@ -97,7 +97,7 @@ if (isset($_GET['ref'])) {
                             <h1 class="h2">Payment History</h1>
 
                             <?php
-                            if ($user['paystatus'] == '') {
+                            if ($user['paystatus'] == '' && $user['modality'] == 'physical') {
                                 echo '<div class="card border-left-3 border-left-danger card-2by1">
                                         <div class="card-body">
                                             <div class="media align-items-center">
@@ -113,9 +113,24 @@ if (isset($_GET['ref'])) {
                                             </div>
                                         </div>
                                     </div>';
+                            }else if ($user['paystatus'] == '' && $user['modality'] == 'online') {
+                                echo '<div class="card border-left-3 border-left-danger card-2by1">
+                                        <div class="card-body">
+                                            <div class="media align-items-center">
+                                                <div class="media-body">
+                                                    No Payment has been made yet
+                                                    
+                                                </div>
+                                                <div class="media-right">
+                                                    ' . $yolk->handler() . '
+                                                    ' . $yolk->payscript($user['title'], $user['name'], $user['email'], $user['contact'], 25, $ref = '') . '
+                                                    ' . $yolk->pay("Pay Now") . '
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>';
                             } else {
-                                echo '
-';
+                                echo '';
                             }
 
                             ?>
